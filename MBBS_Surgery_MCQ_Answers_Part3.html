@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>III MBBS Part-II · Surgery MCQ Answer Key — Part 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap');
+  :root {
+    --bg: #0d1117; --card: #161b22; --border: #21262d;
+    --accent: #f48c06; --accent2: #ffd166; --warn: #ef476f;
+    --text: #e6edf3; --muted: #8b949e;
+    --correct: #1a4731; --correct-text: #3fb950;
+    --chapter-header: #1c2128;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.6; padding: 2rem 1rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding: 3rem 1rem 2.5rem; background: linear-gradient(135deg, #0d1117 0%, #1a0f00 60%, #0d0800 100%); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(244,140,6,0.07) 0%, transparent 70%); pointer-events: none; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); }
+  .hero .subtitle { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+  .badge { display: inline-block; background: rgba(244,140,6,0.12); border: 1px solid rgba(244,140,6,0.3); color: var(--accent); padding: 0.25rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+  .toc { max-width: 860px; margin: 0 auto 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; }
+  .toc h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 1rem; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.5rem; }
+  .toc a { color: var(--accent); text-decoration: none; font-size: 0.9rem; padding: 0.3rem 0; border-bottom: 1px dashed rgba(244,140,6,0.2); transition: color 0.2s; }
+  .toc a:hover { color: var(--accent2); }
+  .chapter { max-width: 860px; margin: 0 auto 2.5rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .chapter-header { background: var(--chapter-header); border-bottom: 2px solid var(--accent); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .chapter-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); background: rgba(244,140,6,0.1); border: 1px solid rgba(244,140,6,0.3); padding: 0.2rem 0.6rem; border-radius: 6px; white-space: nowrap; }
+  .chapter-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--text); }
+  .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--accent2); padding: 0.8rem 1.5rem 0.3rem; background: var(--card); border-bottom: 1px solid var(--border); }
+  .mcq-list { background: var(--card); }
+  .mcq-item { border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; transition: background 0.15s; }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-item:hover { background: rgba(255,255,255,0.02); }
+  .q-row { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.5rem; }
+  .q-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 28px; padding-top: 2px; }
+  .q-text { font-size: 0.92rem; color: var(--text); flex: 1; }
+  .q-year { font-size: 0.75rem; color: var(--warn); font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding-top: 2px; }
+  .answer-row { margin-left: 40px; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .ans-badge { background: var(--correct); border: 1px solid var(--correct-text); color: var(--correct-text); padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+  .ans-text { font-size: 0.88rem; color: #cdd9e5; padding-top: 2px; }
+  .note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-left: 40px; margin-top: 0.25rem; }
+  .saq-section { background: var(--card); padding: 1rem 1.5rem; }
+  .saq-item { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #cdd9e5; display: flex; gap: 0.75rem; }
+  .saq-item:last-child { border-bottom: none; }
+  .saq-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 24px; padding-top: 2px; }
+  .footer-note { max-width: 860px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.8rem; padding: 1.5rem; background: var(--card); border-radius: 10px; border: 1px solid var(--border); }
+  .grand-total { background: rgba(244,140,6,0.08); border: 1px solid rgba(244,140,6,0.3); color: var(--accent2); padding: 1rem; border-radius: 8px; margin-top: 1rem; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Unique Publications · MUHS — Part 3 Final</div>
+  <h1>III<sup>rd</sup> M.B.B.S. Part-II</h1>
+  <p class="subtitle">Ch. 20 (contd.) → Ch. 30 · Trauma, Neurosurgery, Burns &amp; More</p>
+</div>
+
+<div class="toc">
+  <h2>Chapters in This File</h2>
+  <div class="toc-grid">
+    <a href="#ch20b">20. Nutrition &amp; Fluid Therapy (contd.)</a>
+    <a href="#ch21">21. Postoperative Care</a>
+    <a href="#ch23">23. Introduction to Trauma</a>
+    <a href="#ch24">24. Early Assessment &amp; Management of Trauma</a>
+    <a href="#ch25">25. Emergency Neurosurgery</a>
+    <a href="#ch27">27. Maxillofacial Trauma</a>
+    <a href="#ch28">28. Torso Trauma</a>
+    <a href="#ch30">30. Burns</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 20 continued -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch20b">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 20</span>
+    <span class="chapter-title">Nutrition and Fluid Therapy (Continued)</span>
+  </div>
+  <div class="section-label">MCQ — Continued from Part 2</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Fluid calculation requirement formula commonly used is</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Parkland formula — Parkland formula for burns: 4 mL × weight (kg) × % BSA burned = total fluid (Ringer's Lactate) in first 24 hours. Half given in first 8 hrs, remaining half in next 16 hrs. Modified Brooke: 2 mL × kg × % BSA. Muir &amp; Barclay is another formula but Parkland is most widely used.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Which of the following is NOT an indication for parenteral nutrition?</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Hernia surgery — Simple elective hernia surgery does NOT require parenteral nutrition. Patients can resume oral feeding post-operatively. TPN is indicated when the gut cannot be used: proximal intestinal fistula (GI losses), prolonged ileus, severe pancreatitis (gut rest needed), short bowel syndrome, etc.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Sodium content of one litre of isotonic saline is</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">154 mEq — Normal (0.9%) saline contains 154 mEq/L of Na⁺ and 154 mEq/L of Cl⁻. Osmolality ≈ 308 mOsm/L. Plasma Na⁺ is 135–145 mEq/L — saline is slightly hypertonic relative to plasma Na⁺ but isosmotic overall. Large volumes cause hyperchloraemic metabolic acidosis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">TPN is indicated in all EXCEPT</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Sepsis — Sepsis alone is NOT an indication for TPN. In sepsis, enteral nutrition is PREFERRED (if gut function is present) as it maintains gut mucosal integrity and prevents bacterial translocation. TPN may worsen outcomes in sepsis (hyperglycaemia, line infections). TPN is indicated in short bowel, burns (if enteral not tolerated), and high-output fistulas.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Best skin disinfection lasting more than 4 hours for central line insertion is</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Chlorhexidine — Chlorhexidine gluconate (2%) is the gold standard antiseptic for central venous catheter (CVC) site preparation. It has residual antimicrobial activity lasting 4–6+ hours due to binding to skin proteins. Superior to povidone-iodine for CVC-associated bloodstream infection prevention.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Maintenance fluid requirements in neonate in mL/kg/day is</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">120–150 mL/kg/day — Neonatal fluid requirements (Holliday-Segar): Day 1: 60–80 mL/kg/day, Day 2: 80–120 mL/kg/day, Day 3 onwards: 120–150 mL/kg/day. For children &gt;10 kg: 100 mL/kg for first 10 kg + 50 mL/kg for 10–20 kg + 20 mL/kg for each kg above 20 kg.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">All the following are common complications of TPN EXCEPT</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hypoglycemia — TPN typically causes HYPERglycaemia (due to high glucose load), NOT hypoglycaemia. Hypoglycaemia can occur if TPN is suddenly stopped (rebound), but during TPN, hyperglycaemia is the issue. True TPN complications: fluid overload, hepatic dysfunction (steatosis, cholestasis), vitamin/micronutrient deficiency, catheter sepsis, electrolyte disturbances.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">All of the following are supplemented in TPN EXCEPT</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Fibres — TPN is delivered intravenously and bypasses the gut entirely. Dietary fibre CANNOT be given parenterally. TPN provides: carbohydrates (dextrose — energy source), lipids (fat emulsions — essential fatty acids + energy), proteins (amino acid solutions), vitamins, minerals, and trace elements.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 21 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch21">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 21</span>
+    <span class="chapter-title">Postoperative Care</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Commonest site for pressure sore is</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Ischium — In wheelchair-bound/sitting patients, the ischial tuberosities bear maximum sustained pressure. The sacrum is the most common site in bedridden/supine patients. Other common sites: greater trochanter (lateral position), heel, malleolus, occiput.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Decubitus ulcers are</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Pressure sores — "Decubitus" = Latin for "lying down." Decubitus ulcers = pressure ulcers from sustained pressure causing ischaemia and tissue necrosis over bony prominences in immobile patients. Also called bedsores. Prevention: 2-hourly turning, pressure-relieving mattresses.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">The most pathognomonic sign of an impending wound rupture is</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Serosanguinous discharge — Sudden appearance of pink/salmon-coloured (serosanguinous) discharge from an abdominal wound on day 7–10 post-op is PATHOGNOMONIC of impending burst abdomen (wound dehiscence). This "pink fluid" warns the surgeon before the wound actually opens.</span></div>
+    </div>
+
+  </div>
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Phlegmasia cerulia dolens (W-13) — painful blue leg from massive DVT causing venous gangrene</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 23 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch23">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 23</span>
+    <span class="chapter-title">Introduction to Trauma</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">First step in trauma is</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Maintenance of airway — ATLS primary survey: A-B-C-D-E. Airway (with cervical spine protection) is ALWAYS the first priority in trauma. A dead airway kills the patient within minutes — before bleeding, dehydration, or reconstruction can be addressed.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 24 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch24">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 24</span>
+    <span class="chapter-title">Early Assessment and Management of Trauma</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">In severe injury, first to be maintained is</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Airway — Consistent with ATLS principles. "A" for Airway (with C-spine protection) is always first. Without a patent airway, all other interventions are futile. Clear airway → assess breathing → circulation (control haemorrhage) → disability → exposure.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">External bleeding in an injured patient is best controlled by</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Direct pressure — Firm, direct manual pressure over the wound is the most effective, safest first-line method to control external haemorrhage. Tourniquets are second-line for limb bleeding uncontrolled by pressure. Adrenaline is not used for haemorrhage control.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">The diagnosis of flail chest is done by</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Clinical examination — Flail chest is a CLINICAL diagnosis. Paradoxical movement of a segment of the chest wall (moves IN during inspiration, OUT during expiration, opposite to normal) is seen and felt on examination. X-ray/CT may show rib fractures but diagnosis is clinical.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Correct sequence in resuscitation of trauma patient in casualty</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Airway → Breathing → Circulation — ATLS primary survey: A-B-C-D-E. Airway first (life lost fastest from airway obstruction), then Breathing (tension pneumothorax, open chest wounds), then Circulation (haemorrhage control, IV access). This sequence saves the most lives in polytrauma.</span></div>
+    </div>
+
+  </div>
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Flail chest (M-11, S-12) / Tension pneumothorax (S-17)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Cardio-Pulmonary Resuscitation CPR (W-11)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Lucid interval (W-12) / Modified Glasgow Coma Score (W-17)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>ABCD in Polytrauma (W-19)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 25 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch25">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 25</span>
+    <span class="chapter-title">Emergency Neurosurgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Cerebrospinal otorrhoea is caused by</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Fracture of middle fossa — CSF otorrhoea (CSF leaking from the ear) is caused by fracture of the petrous part of the temporal bone (middle cranial fossa fracture), which tears the dura and tympanic membrane. CSF rhinorrhoea = anterior cranial fossa fracture (cribriform plate).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Lucid interval is seen in</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Extradural haemorrhage — Classic lucid interval: unconscious → regains consciousness → becomes unconscious again. This occurs in EXTRADURAL haematoma (EDH) due to tearing of the middle meningeal artery. The initial LOC is from concussion, then as the haematoma expands, raised ICP causes the second deterioration.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Earliest manifestation of increased intracranial tension following head injury</span><span class="q-year">N-09, W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Ipsilateral pupillary dilatation — As ICP rises, the uncus of the temporal lobe herniates downward through the tentorium, compressing the ipsilateral CN III (oculomotor nerve). This causes ipsilateral pupil dilatation (dilated, unreactive = "blown pupil"). This is the EARLIEST sign of transtentorial herniation.</span></div>
+      <div class="note">Note: The book marks (a) as correct. Altered mental status is also an early sign but pupillary dilatation is more specific and pathognomonic of transtentorial herniation.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">RTA patient: transient LOC → regained consciousness → again unconscious. Most likely diagnosis</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Subdural haemorrhage — The book marks subdural haemorrhage here. However: the CLASSIC lucid interval is EDH. Subdural haematoma (especially acute-on-chronic) can also present with gradual deterioration after a lucid period. <i>Note: Q2 (lucid interval = EDH) and this Q4 (subdural) appear contradictory — the classic teaching assigns lucid interval to EDH, but some texts describe a similar presentation with subdural. Trust the book's marked answer for exam purposes: subdural for this clinical scenario.</i></span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Maximum score in Glasgow Coma Scale is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">15 — GCS maximum = 15 (E4 + V5 + M6). GCS minimum = 3 (not 0). Scoring: Eye opening (E): 1–4, Verbal (V): 1–5, Motor (M): 1–6. GCS ≤8 = severe TBI (intubation indicated). GCS 9–12 = moderate. GCS 13–15 = mild.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Features of raised intracranial tension EXCEPT</span><span class="q-year">M-10, W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Tachycardia — Raised ICP causes BRADYCARDIA (not tachycardia), as part of the Cushing's triad: (1) Hypertension, (2) Bradycardia, (3) Irregular respirations. The triad represents a terminal attempt by the brainstem to maintain cerebral perfusion pressure. Tachycardia suggests shock/haemorrhage, not raised ICP.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">In Glasgow Coma Scale, all of the following are considered EXCEPT</span><span class="q-year">M-10, S-12, W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Sensory response — GCS assesses 3 parameters ONLY: (1) Eye opening (E), (2) Verbal response (V), (3) Motor response (M). Sensory/pain response is NOT separately scored in GCS. Pain is used as a STIMULUS to elicit motor and eye-opening responses, but sensory modality itself is not scored.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Laceration of a branch of the middle meningeal artery leads to</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Extradural haematoma — The middle meningeal artery runs in a groove on the inner surface of the temporal bone. Temporal bone fracture tears this artery → arterial bleeding accumulates between the skull and the dura (extradural space) → biconvex (lens-shaped) haematoma on CT. Needs emergency craniotomy.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Battle's sign is indicative of fracture of</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Middle cranial fossa — Battle's sign = ecchymosis (bruising) over the mastoid process behind the ear, appearing 24–48 hours after a basilar skull fracture involving the middle cranial fossa (petrous temporal bone). Signs of base of skull fracture: Battle's sign (middle fossa), Raccoon eyes/periorbital ecchymosis (anterior fossa), CSF otorrhoea/rhinorrhoea, haemotympanum.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Minimum Glasgow Coma Scale score is</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">3 — GCS minimum = 3 (E1+V1+M1 = "No response" to all stimuli). Score of 0 is NOT possible because each component has a minimum of 1. A patient with no response to any stimulus still scores 3, not 0.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Types of intracranial haematomas EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Subperitoneal — "Subperitoneal" is an abdominal term, NOT a type of intracranial haematoma. True intracranial haematomas: (1) Extradural (between skull and dura), (2) Subdural (between dura and arachnoid), (3) Subarachnoid (between arachnoid and pia), (4) Intracerebral (within brain parenchyma).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Facial nerve palsy is seen in fractures of</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Middle cranial fossa — CN VII (facial nerve) runs through the petrous temporal bone (middle fossa). Fractures of the petrous temporal bone (middle cranial fossa) can injure the facial nerve in the facial canal, causing facial palsy. Also: CN VIII damage causes sensorineural deafness/vestibular disturbance.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Lucid interval can be a presentation in which type of head injury?</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Extradural haematoma — Consistent with Q2. Lucid interval is CLASSIC for EDH. The injury is initially mild (concussion), patient wakes up, then as the arterial haematoma expands and ICP rises, the patient deteriorates again. Timing: minutes to hours after injury.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">Cause of extradural haemorrhage is injury to</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Middle meningeal artery — The middle meningeal artery (branch of maxillary artery, enters skull at foramen spinosum) is the most common vessel injured in EDH (~85%). Venous EDH from dural sinuses can also occur. The arterial nature explains the rapid expansion and urgent surgical need.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Features of anterior cranial fossa fracture EXCEPT</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Ecchymosis posterior to mastoid process — Mastoid ecchymosis (Battle's sign) = MIDDLE cranial fossa fracture. Anterior cranial fossa fracture features: periorbital ecchymosis (raccoon/panda eyes), subconjunctival haemorrhage (no posterior limit), CSF rhinorrhoea (from cribriform plate), epistaxis, anosmia (CN I damage), and unilateral blindness (CN II).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">According to GCS, a verbal score of 1 indicates</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">No response — GCS Verbal scoring: V5 = Oriented, V4 = Confused/Disoriented, V3 = Inappropriate words, V2 = Incomprehensible sounds, V1 = No verbal response. Score of 1 = absolute silence. Score of 2 = groaning. Score of 3 = single words out of context.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Most important clinical finding in a case of head injury is</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Level of consciousness — The level of consciousness (GCS) is the SINGLE MOST IMPORTANT clinical parameter in head injury. It guides management decisions (intubation at GCS ≤8), monitors deterioration, and determines prognosis. Serial GCS monitoring is essential in all head injuries.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">All of the following lower intracranial pressure EXCEPT</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Corticosteroids — Corticosteroids do NOT lower ICP in TBI (traumatic brain injury) — they are specifically CONTRAINDICATED in TBI (CRASH trial showed increased mortality). They DO lower ICP in cerebral oedema from tumours/abscesses. Methods to lower ICP: Mannitol (osmotic diuretic), Frusemide (diuretic), Hyperventilation (reduce PaCO₂ → vasoconstriction), head elevation, CSF drainage.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">Management of extradural haematoma is</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Immediate evacuation — EDH is a neurosurgical emergency requiring IMMEDIATE craniotomy and evacuation of the haematoma. Time is brain — delay beyond 2–4 hours significantly worsens outcomes. A burr hole may be done if craniotomy is not immediately available. Observation alone is NOT acceptable for symptomatic EDH.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Common vessel to rupture in extradural haematoma is</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Meningeal artery (Middle meningeal artery) — Consistent with Q14. The middle meningeal artery is the most commonly torn vessel in EDH (~85% of cases). It runs in the epidural space in a groove on the temporal bone, making it vulnerable to temporal bone fractures.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">In Glasgow Coma Scale, all the following are considered EXCEPT</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Sensory response — Repeat of Q7. GCS = Eye opening + Verbal response + Motor response. Sensory response is NOT a GCS component.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">Minimum score in Glasgow Coma Scale is</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">3 — Repeat of Q10. Minimum GCS = 3 (E1+V1+M1). Not zero. Important exam fact: GCS range = 3–15, NOT 0–15.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q23</span><span class="q-text">Best prognostic factor for head injury is</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Mode of injury — The book marks "mode of injury" (c) as the answer. However, clinically the GCS is the most widely used prognostic tool. The mode/mechanism of injury (RTA vs fall vs assault, velocity, penetrating vs blunt) determines the force delivered to the brain and strongly predicts outcome. For exam purposes, follow the book's marked answer: mode of injury.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ / LAQ Key Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Glasgow Coma Scale and its significance (M-03,05)(N-09)(W-15,18) — Know: E1-4, V1-5, M1-6, total 3-15, intubate at ≤8</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Extradural haematoma — clinical features and management (N-04, M-05, W-16)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Lucid interval (W-12) / Signs of base of skull fracture (M-08)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Subdural haematoma (A-92) / Brain death (O-94, A-96) / Cerebral concussion (A-99)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Intercostal drainage (O-91,97) / CT Scan for Head Injury (W-14)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 27 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch27">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 27</span>
+    <span class="chapter-title">Maxillofacial Trauma</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">The commonest site of fracture of mandible is</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Condylar neck — The condylar neck/subcondylar region is the most common site of mandibular fracture (~36%), due to its thin cross-section and indirect force transmission. Other sites in order: angle of mandible (~20%), symphysis/parasymphysis (~17%). The condyle acts as a "crumple zone."</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Best view of mandible is</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Orthopentogram (OPG) — Orthopantomogram (OPG/DPT) gives a panoramic view of the entire mandible, temporomandibular joints, and lower teeth in a single image. It is the GOLD STANDARD radiograph for mandibular fracture assessment, showing all sites including the condyle.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Patient: inability to close mouth after yawning. Diagnosis?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Subluxation of temporomandibular joint — Wide opening of the mouth (as in yawning) can cause the condyle to displace ANTERIOR to the articular eminence of the TMJ, locking in open position. The masseter and temporalis go into spasm, preventing mouth closure. Reduction: downward pressure on molars + backward push. Tetanus/masseter spasm causes trismus (cannot OPEN mouth, opposite).</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 28 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch28">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 28</span>
+    <span class="chapter-title">Torso Trauma</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Bleeding from cystic artery is best controlled by the maneuver of</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Pringle manoeuvre — Pringle manoeuvre = manual compression of the hepatoduodenal ligament between thumb and index finger (or with a non-crushing clamp), temporarily occluding the portal vein and hepatic artery to reduce hepatic blood flow and control haemorrhage from liver, cystic artery, or bile duct injuries. Named after James Hogarth Pringle (1908).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Weighing of swabs post-operatively is a method to assess</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Blood loss — Gravimetric method: pre-weighed dry swabs weighed again after use. Difference in weight (g) ≈ blood volume lost (mL) since blood density ≈ 1 g/mL. Most accurate method of intraoperative blood loss estimation.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Investigation of choice for blunt abdominal trauma in an UNSTABLE patient is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">CT Scan — <i>Note: The book marks CT scan, but current ATLS guidelines recommend FAST (bedside ultrasound) for haemodynamically UNSTABLE patients because it is immediate and non-invasive. CT scan is for STABLE patients. DPL is an older alternative. If the exam book marks CT, follow for MUHS exam purposes.</i> Clinically: FAST for unstable, CT for stable patients with blunt abdominal trauma.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Pringle's manoeuvre is to stop bleeding from</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Hepatic artery (liver) — Pringle compresses the hepatoduodenal ligament, which contains: portal vein (posterior), hepatic artery (left), common bile duct (right). It controls inflow to the liver. Used in liver trauma and hepatic surgery to temporarily stop haemorrhage from the liver and its vessels.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Most common organ to rupture following blunt abdominal trauma is</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Spleen — The spleen is the most commonly injured solid organ in blunt abdominal trauma (~40–55% of solid organ injuries), due to its location, size, and fragile parenchyma. The liver is the second most common. Signs: left upper quadrant pain, Kehr's sign (referred left shoulder pain), haemodynamic instability.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Kehr's sign is associated with</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Splenic rupture — Kehr's sign = referred pain to the LEFT shoulder tip (from left phrenic nerve irritation by subdiaphragmatic blood pooling from a ruptured spleen). It is more prominent when the patient is supine with legs raised (Trendelenburg position forces blood superiorly). Classic sign of haemoperitoneum from splenic injury.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Tachypnoea, dyspnoea and neck veins distension constitutes</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Tension Pneumothorax — Classic triad: tachypnoea/dyspnoea + distended neck veins (JVD from mediastinal shift → obstructed SVC return) + tracheal deviation away from affected side + absent breath sounds. Also: hypotension (obstructive shock). Treatment: immediate needle decompression (2nd ICS MCL), then chest drain.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Pericardial aspiration is usually done through</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Subxiphoid region — Pericardiocentesis is performed via the subxiphoid approach: needle inserted at 45° angle between xiphoid process and left costal margin, directed toward left shoulder. ECG-guided or echo-guided. Used for cardiac tamponade (Beck's triad: hypotension, JVD, muffled heart sounds).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">All are indications of urgent thoracotomy EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">150 mL blood in the pleural space — 150 mL is a SMALL haemothorax — managed conservatively (observation ± intercostal drain). Indications for urgent thoracotomy: initial drainage &gt;1500 mL blood, ongoing haemorrhage &gt;200 mL/hr for 3–4 hours, massive haemothorax, cardiac tamponade not responding to pericardiocentesis, oesophageal injury, aortic injury.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Diagnosis of flail chest is done by</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Clinical examination — Repeat of Ch.24 Q3. Flail chest = paradoxical chest wall movement = CLINICAL diagnosis. Defined as fracture of ≥3 consecutive ribs in ≥2 places, creating a free-floating "flail segment." The underlying pulmonary contusion is the real danger.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Triangle of safety for intercostal drain insertion does NOT include</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Anterior to midaxillary line — The "triangle of safety" for ICD insertion: APEX = axilla, ANTERIOR border = anterior axillary line (NOT midaxillary), POSTERIOR border = posterior axillary line, INFERIOR border = level of nipple (5th ICS). Insertion is POSTERIOR to the anterior axillary line (i.e., in the midaxillary/posterior axillary region). "Anterior to midaxillary line" is outside the safe triangle.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Man with multiple rib fractures and paradoxical chest movement. Management is</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Intermittent Positive Pressure Ventilation (IPPV) — Management of flail chest: IPPV (internal pneumatic stabilisation) is the definitive treatment for large flail segments with respiratory failure. It splints the chest from inside. Strapping is CONTRAINDICATED (worsens respiratory failure). Analgesia, physiotherapy, and high-flow O₂ for smaller flail segments.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Blunt abdominal trauma with tachycardia, hypotension, pallor. Most likely injury?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Splenic injury — Haemodynamic instability (tachycardia + hypotension + pallor = haemorrhagic shock) after blunt abdominal trauma = splenic injury until proven otherwise. The spleen is the most commonly injured organ in blunt abdominal trauma. Kehr's sign, left flank tenderness support the diagnosis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">50-yr-old in shock with haemoperitoneum: emergency laparotomy shows lacerations at three sites on spleen. Better option?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Splenectomy — Multiple lacerations at 3 sites (Grade IV–V injury) in a haemodynamically unstable patient = SPLENECTOMY. Splenorrhaphy (repair) is for low-grade injuries in stable patients. Packing is a damage control option. Post-splenectomy: vaccinate against encapsulated organisms (pneumococcus, meningococcus, Haemophilus) and lifelong penicillin prophylaxis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Pringle manoeuvre is used during surgical management of traumatic injury of</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Liver — Pringle's manoeuvre temporarily controls hepatic inflow (portal vein + hepatic artery) during liver surgery/trauma. It reduces hepatic blood flow to allow haemostasis of liver lacerations. Safe for up to 15–20 minutes (warm ischaemia). Can be extended with intermittent clamping.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Kehr's sign in splenic rupture is</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Pain over left shoulder — Repeat of Q6. Blood under the left hemidiaphragm irritates the diaphragm → referred pain to left shoulder tip via left phrenic nerve (C3,4,5). Classic sign of splenic rupture/haemoperitoneum in left upper quadrant.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Flail chest is</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Paradoxic movement of chest wall — Flail chest = segment of chest wall moves PARADOXICALLY: inward during inspiration (as intrathoracic pressure falls), outward during expiration. Caused by fracture of ≥3 consecutive ribs in ≥2 places. The paradox is due to loss of bony continuity with the rest of the thoracic cage.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Large segment flail chest with hypoxia. Treatment of choice</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">IPPV (Intermittent Positive Pressure Ventilation) — Consistent with Q12. IPPV is definitive treatment for large flail chest with respiratory compromise. It provides "internal pneumatic splinting" — the positive pressure keeps the lung expanded and stabilises the flail segment from within.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">All are indications of thoracotomy EXCEPT</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Pulmonary contusion — Pulmonary contusion (bruising of lung parenchyma) is managed conservatively with mechanical ventilation if needed, NOT thoracotomy. Indications for thoracotomy: massive haemothorax, major bronchus tear, oesophageal rupture, cardiac tamponade refractory to pericardiocentesis, ongoing haemorrhage &gt;200 mL/hr.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Post-splenectomy: vaccinate for</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Pneumococcus — Post-splenectomy vaccination is essential against encapsulated bacteria (OPSI — Overwhelming Post-Splenectomy Infection risk). Vaccines required: (1) Pneumococcal (Streptococcus pneumoniae) — most important, (2) Meningococcal (Neisseria meningitidis), (3) Haemophilus influenzae type b. Vaccinate ≥2 weeks before elective splenectomy or ASAP after emergency splenectomy.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">RTA: respiratory distress, hypotension, emphysema, no air entry on one side. Next best step?</span><span class="q-year">PG 2020</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Needle decompression in the 2nd ICS (book says 5th ICS — note discrepancy) — Clinical picture = Tension Pneumothorax (subcutaneous emphysema + absent breath sounds + hypotension + respiratory distress). IMMEDIATE needle decompression is first-line emergency treatment — 2nd ICS midclavicular line (standard) or 5th ICS anterior axillary line (safe triangle). Do NOT wait for X-ray. Then insert ICD.</span></div>
+      <div class="note">Standard teaching: needle decompression at 2nd ICS MCL. The book states 5th ICS — follow book for MUHS exam.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">Stab injury lower chest: low pulses, BP improved with IV fluids, CXR = clear lungs. Next step?</span><span class="q-year">PG 2020</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">E-FAST — Clear lungs on CXR + stab to lower chest + haemodynamic instability = suspect CARDIAC TAMPONADE or abdominal injury. E-FAST (Extended FAST) = bedside ultrasound examining pericardium (for tamponade), peritoneal cavity (haemoperitoneum), and pleural spaces. It is the next most appropriate bedside investigation in this scenario.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q23</span><span class="q-text">Left hypochondrium contusion, SBP 70 mmHg, PR 110. What to do next?</span><span class="q-year">PG 2021</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">FAST — Haemodynamically UNSTABLE patient (SBP 70, HR 110 = Class III shock) with left hypochondrium contusion (suspect splenic injury). FAST (Focused Assessment with Sonography for Trauma) is the immediate bedside investigation of choice. If FAST positive (haemoperitoneum) → emergency laparotomy. CECT requires a stable patient. DPL is older and invasive.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Flail chest (M-11, S-12,16) / Tension pneumothorax (S-17)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Osteochondroma (W-13,18) / Damage Control Surgery (S-18)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Pneumothorax (A-96,91) / Haemothorax (O-93) / Cardiac Tamponade (O-95)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 30 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch30">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 30</span>
+    <span class="chapter-title">Burns</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Burns involving the front of chest and abdomen in an adult account for</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">18% — Rule of Nines (Wallace, adults): Head &amp; neck = 9%, Each arm = 9%, Anterior trunk = 18% (chest 9% + abdomen 9%), Posterior trunk = 18%, Each leg = 18%, Perineum = 1%. Front of chest + abdomen = ANTERIOR TRUNK = 18%.</span></div>
+      <div class="note">Rule of Nines mnemonic: "9 for head, 9 each arm, 18 front, 18 back, 18 each leg, 1 perineum" = 99% + 1% = 100%</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Third degree burns are characterised by</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Loss of sensations and anaesthesia — Full-thickness (3rd degree) burns destroy ALL layers of skin including sensory nerve endings → anaesthesia (PAINLESS). Paradox: the deepest burns are PAINLESS while partial-thickness burns are extremely painful. Also: leathery/waxy/charred appearance, no blistering, no capillary refill.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Frostbite is caused by</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Exposure to extreme cold — Frostbite = tissue injury from freezing (ice crystal formation in cells → cell membrane rupture + vascular damage + thrombosis). Affects extremities (digits, ears, nose). Grades: frostnip → superficial → partial-thickness → full-thickness. NOT caused by bites.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Burns involving the head and neck in a child aged 1 year accounts for</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">18% — In children, the Rule of Nines is MODIFIED (Lund and Browder chart). An infant's head is proportionally larger (18% at age 1 vs 9% in adults). Each percentage point taken from head is added to legs. At age 1: Head = 18%, Each leg = 13.5%. Use Lund-Browder chart for accurate paediatric BSA estimation.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Different types of surgical dressings are</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Modern wound dressings include all types: bead dressings/polymeric films (transparent, permeable), hydrocolloids, fibrous polymers (alginate, carboxymethylcellulose), hydrogels, and foams. Each is suited to different wound types (dry vs exudating, infected vs clean).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Following is NOT a major determinant of outcome of Burns case</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">H/o suicidal/homicidal burns — The CAUSE (suicidal vs accidental vs homicidal) does NOT determine the physiological outcome of burns. Major determinants of burns outcome: (1) % BSA burned (Baux score = %BSA + age), (2) Depth of burns, (3) Presence of inhalation injury (dramatically worsens prognosis), (4) Age, (5) Associated injuries.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">In early local management of burns</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Wounds should be meticulously cleansed and devitalised tissue excised — Early burn wound management: Cool the burn (cold running water ≤20 min if &lt;3hrs post-burn), then clean with antiseptic, debride non-viable tissue, and cover. Superficial burns CAN be left exposed (exposure method). Full-thickness burns need early excision and grafting, not daily dressing.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Which of the following is NOT an indication for hospitalisation?</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">5% burns in child — 5% superficial burns in a child does NOT require hospitalisation in isolation. Indications for admission: &gt;10% BSA burns (any age), &gt;5% full-thickness, burns to face/hands/feet/genitalia/perineum/major joints, inhalation injury, electrical burns (always admit), chemical burns, circumferential burns, extremes of age (&lt;5 or &gt;60), significant associated injuries.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Curling's ulcer is seen in</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Burn patient — Curling's ulcer = acute peptic ulcer (duodenal/gastric) occurring as a stress response in burn patients. Mechanism: severe physiologic stress → elevated cortisol/catecholamines → reduced mucosal blood flow → ischaemia → ulceration. Cushing's ulcer = head injury patients (vagal stimulation → increased acid).</span></div>
+      <div class="note">Memory: Curling (burns) vs Cushing (head injury/neurosurgery)</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Most common cause of death due to burn in early period is</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hypovolemic shock — In the EARLY period (&lt;48–72 hours): massive plasma loss → hypovolaemic shock is the leading cause of death. In the LATE period (&gt;48–72 hours): sepsis/multi-organ failure becomes the main cause. Hence early aggressive fluid resuscitation (Parkland formula) is critical.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Most important aspect of management of burn injury in first 24 hours</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Fluid resuscitation — Aggressive IV fluid resuscitation is the cornerstone of early burn management. The Parkland formula guides fluid replacement. Goals: urine output 0.5–1 mL/kg/hr (adults), 1 mL/kg/hr (children). Failure to resuscitate leads to hypovolaemic shock and organ failure. Ringer's Lactate is the preferred fluid.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Rule of nine to estimate surface area of burnt patient was introduced by</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Alexander Wallace — The "Rule of Nines" was introduced by Alexander Wallace in 1951. It divides the body surface into regions each representing approximately 9% (or multiples thereof) for adults. More accurate Lund-Browder chart used for children. Wallace's rule is quick and practical for emergency assessment.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Late death in burns is due to</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Sepsis — Late burn mortality (&gt;72 hours onwards): SEPSIS / multi-organ dysfunction syndrome (MODS) is the leading cause. Burn wounds are ideal culture medium for bacteria (Pseudomonas, MRSA, Candida). Loss of skin barrier + immunosuppression → systemic infection. Consistent with Q10 (early = hypovolaemia; late = sepsis).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">Parkland formula for calculation of fluid requirement in burn patients is</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">4 mL × weight (kg) × % BSA burned = total volume (mL) in first 24 hours — Parkland formula: 4 mL × kg × %TBSA burn = total Ringer's Lactate in 24 hours. Give ½ in first 8 hours (from time of burn, not admission), ½ in next 16 hours. Children: add maintenance fluids (D5RL). Modified Brooke = 2 mL × kg × %BSA.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ / LAQ Key Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Burns management — fluid resuscitation, Parkland formula, Rule of Nines</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Classification of burns (superficial/partial/full thickness)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Curling's ulcer vs Cushing's ulcer</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Inhalation injury — management and significance</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Lund and Browder chart for paediatric burns BSA estimation</span></div>
+  </div>
+</div>
+
+<div class="footer-note">
+  <div class="grand-total">
+    🏆 <strong>GRAND TOTAL — All 3 PDFs Combined</strong><br><br>
+    PDF 1 (Ch. 1–6): ~57 MCQs answered<br>
+    PDF 2 (Ch. 6–20): ~46 MCQs answered<br>
+    PDF 3 (Ch. 20–30): ~58 MCQs answered<br><br>
+    <strong>Total MCQs answered: ~161 across all chapters</strong>
+  </div>
+  <br>
+  <strong>Quick Reference: Key Mnemonics &amp; High-Yield Facts</strong><br><br>
+  🧠 GCS: E(1–4) + V(1–5) + M(1–6) = range 3–15. Intubate at ≤8. Minimum = 3, not 0.<br>
+  🔥 Burns: Early death = Hypovolaemia. Late death = Sepsis. Parkland = 4×kg×%BSA (RL, 24h).<br>
+  🩸 Shock classes: I&lt;15%, II 15–30%, III 30–40%, IV&gt;40%. Best assessed by urine output.<br>
+  💊 Longest LA = Bupivacaine. LA fails in infection = ↓ pH.<br>
+  🔬 GCS components: Eye + Verbal + Motor (NOT sensory).<br>
+  🦷 EDH = middle meningeal artery + lucid interval. SDH = bridging veins + elderly/alcoholics.<br>
+  🧪 TPN: subclavian vein, no fibres, hyperglycaemia (not hypoglycaemia) is the complication.<br>
+  🌡️ Wound rupture warning = serosanguinous discharge on day 7–10.<br><br>
+  <span style="color: #f48c06;">Ask me for any SAQ/LAQ model answer — just name the topic!</span>
+</div>
+
+
+<div class="navigation-bar" style="display: flex; justify-content: space-between; max-width: 900px; margin: 2rem auto; padding: 1.5rem; border-top: 2px solid #e5e7eb; font-family: 'Inter', system-ui, sans-serif;">
+  <a href="MBBS_Surgery_MCQ_Answers_Part2.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">⬅️ Previous Part</a>
+  <a href="index.html" style="padding: 0.75rem 1.5rem; background-color: #f3f4f6; color: #111827; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s;">🏠 Home List</a>
+  <a href="MBBS_Surgery_MCQ_Answers_Part4_Final.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">Next Part ➡️</a>
+</div>
+
+</body>
+</html>
