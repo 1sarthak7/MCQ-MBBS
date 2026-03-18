@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>III MBBS Part-II · Surgery MCQ Answer Key — Part 5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap');
+  :root {
+    --bg: #0d1117; --card: #161b22; --border: #21262d;
+    --accent: #06d6a0; --accent2: #80ffdb; --warn: #ef476f;
+    --text: #e6edf3; --muted: #8b949e;
+    --correct: #1a4731; --correct-text: #3fb950;
+    --chapter-header: #1c2128;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.6; padding: 2rem 1rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding: 3rem 1rem 2.5rem; background: linear-gradient(135deg, #0d1117 0%, #001a14 60%, #000d0a 100%); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(6,214,160,0.06) 0%, transparent 70%); pointer-events: none; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); }
+  .hero .subtitle { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+  .badge { display: inline-block; background: rgba(6,214,160,0.12); border: 1px solid rgba(6,214,160,0.3); color: var(--accent); padding: 0.25rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+  .toc { max-width: 860px; margin: 0 auto 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; }
+  .toc h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 1rem; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.5rem; }
+  .toc a { color: var(--accent); text-decoration: none; font-size: 0.9rem; padding: 0.3rem 0; border-bottom: 1px dashed rgba(6,214,160,0.2); transition: color 0.2s; }
+  .toc a:hover { color: var(--accent2); }
+  .chapter { max-width: 860px; margin: 0 auto 2.5rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .chapter-header { background: var(--chapter-header); border-bottom: 2px solid var(--accent); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .chapter-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); background: rgba(6,214,160,0.1); border: 1px solid rgba(6,214,160,0.3); padding: 0.2rem 0.6rem; border-radius: 6px; white-space: nowrap; }
+  .chapter-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--text); }
+  .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--accent2); padding: 0.8rem 1.5rem 0.3rem; background: var(--card); border-bottom: 1px solid var(--border); }
+  .mcq-list { background: var(--card); }
+  .mcq-item { border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; transition: background 0.15s; }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-item:hover { background: rgba(255,255,255,0.02); }
+  .q-row { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.5rem; }
+  .q-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 28px; padding-top: 2px; }
+  .q-text { font-size: 0.92rem; color: var(--text); flex: 1; }
+  .q-year { font-size: 0.75rem; color: var(--warn); font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding-top: 2px; }
+  .answer-row { margin-left: 40px; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .ans-badge { background: var(--correct); border: 1px solid var(--correct-text); color: var(--correct-text); padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+  .ans-text { font-size: 0.88rem; color: #cdd9e5; padding-top: 2px; }
+  .note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-left: 40px; margin-top: 0.25rem; }
+  .saq-section { background: var(--card); padding: 1rem 1.5rem; }
+  .saq-item { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #cdd9e5; display: flex; gap: 0.75rem; }
+  .saq-item:last-child { border-bottom: none; }
+  .saq-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 24px; padding-top: 2px; }
+  .footer-note { max-width: 860px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.82rem; padding: 2rem; background: var(--card); border-radius: 10px; border: 1px solid var(--border); }
+  .cheatsheet { text-align: left; margin-top: 1rem; }
+  .cheatsheet h3 { color: var(--accent2); margin: 1rem 0 0.5rem; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 1px; }
+  .cheatsheet ul { list-style: none; }
+  .cheatsheet li { padding: 0.25rem 0; font-size: 0.83rem; border-bottom: 1px solid var(--border); }
+  .cheatsheet li:last-child { border: none; }
+  .cheatsheet li::before { content: "→ "; color: var(--accent); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Unique Publications · MUHS — Part 5</div>
+  <h1>III<sup>rd</sup> M.B.B.S. Part-II</h1>
+  <p class="subtitle">Ch. 43–51 · Head &amp; Neck, Salivary Glands, Thyroid &amp; Parathyroid</p>
+</div>
+
+<div class="toc">
+  <h2>Chapters in This File</h2>
+  <div class="toc-grid">
+    <a href="#ch43">43. Elective Neurosurgery</a>
+    <a href="#ch44">44. The Eye and Orbit</a>
+    <a href="#ch45">45. Cleft Lip and Palate</a>
+    <a href="#ch46">46. Head and Neck Swellings</a>
+    <a href="#ch49">49. Oropharyngeal Cancer</a>
+    <a href="#ch50">50. Disorders of Salivary Glands</a>
+    <a href="#ch51">51. Thyroid and Parathyroid Glands</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 43 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch43">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 43</span>
+    <span class="chapter-title">Elective Neurosurgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">All are brilliantly transilluminant swellings EXCEPT</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Dermoid cyst — Dermoid cysts contain solid elements (hair, teeth, keratin, sebum) — NOT brilliantly transilluminant. Brilliantly transilluminant: Cystic hygroma (lymphangioma), Meningocele (CSF-filled), Cyst of epididymis, Hydrocele. Repeat from Ch. 42.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">The most common intracerebral tumours are</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Gliomas — Gliomas (astrocytomas, glioblastoma multiforme, oligodendrogliomas) are the most common PRIMARY brain tumours (~30% of all brain tumours, ~80% of malignant primary brain tumours). GBM (Grade IV astrocytoma) is the most common malignant type. Meningiomas are more common overall but are extra-axial, not intracerebral.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Which of the following brain tumours is highly vascular in nature?</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Glioblastoma multiforme (GBM) — GBM (Grade IV astrocytoma) is highly vascular with neovascularisation, pseudopalisading necrosis, and endothelial proliferation. Produces VEGF in large amounts. On imaging: ring-enhancing lesion with central necrosis and surrounding oedema. Worst prognosis of all brain tumours (median survival ~15 months).</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 44 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch44">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 44</span>
+    <span class="chapter-title">The Eye and Orbit</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Dermoid arises from</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Totipotent cell — Dermoid cysts arise from totipotent cells (ectodermal cells) trapped along lines of embryonic fusion during development. They contain elements from all three germ layers potentially. The "totipotent cell" theory explains why dermoids contain diverse structures (skin, hair, teeth, sebaceous glands).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Which cyst generally develops in the line of embryonic fusion?</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Dermoid cyst — Dermoid cysts develop at the LINES OF EMBRYONIC FUSION (sites where embryonic folds/processes fuse during development). Common sites: outer angle of orbit (external angular dermoid — most common), root of nose, midline scalp, presacral. This distinguishes them from sebaceous cysts (blocked follicles) and thyroglossal cysts (thyroid descent).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Melanoma can arise from all sites EXCEPT</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Spleen — Repeat from Ch. 42. Melanocytes (neural crest-derived) are present in: skin, retina/uveal tract, meninges, mucosal surfaces. The spleen has no melanocytes — melanoma found in the spleen is always metastatic, never primary.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 45 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch45">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 45</span>
+    <span class="chapter-title">Cleft Lip and Palate</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Cleft lip is due to non-fusion of</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Maxillary and medial nasal process — Cleft lip results from failure of fusion between the MAXILLARY PROCESS and the MEDIAL NASAL PROCESS (fronto-nasal process) during the 5th–8th week of embryonic development. The philtrum and premaxilla are derived from the medial nasal process. Failure of mesenchymal migration/fusion → cleft lip.</span></div>
+      <div class="note">Embryology: Upper lip = maxillary process (×2) + medial nasal process (×1, central). Lower lip = two mandibular processes. Cleft palate = failure of palatine shelf fusion.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Cleft lip repair is commonly performed at the age of</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">3–6 months — Rule of Ten for cleft lip repair: weight ≥10 lbs (4.5 kg), Hb ≥10 g/dL, age ≥10 weeks (approximately 3 months). Surgery is typically performed at 3–6 months. Cleft palate repair is done later at 9–18 months (to allow palatal growth but before speech develops, ideally before 12–18 months).</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 46 — HEAD AND NECK -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch46">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 46</span>
+    <span class="chapter-title">Head and Neck Swellings and Surgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Commonest site of thyroglossal cyst is</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Sub-hyoid (infrahyoid) — The most common site of thyroglossal cyst is SUBHYOID (below the hyoid bone), accounting for ~65–75% of cases. The thyroid gland descends from the foramen caecum at the tongue base → through the hyoid → to final position. Cysts can form anywhere along this tract but are most common just below the hyoid.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Referred pain to the ear is commonly seen in</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Carcinoma of nasopharynx — Referred otalgia (ear pain) from head and neck malignancies occurs via shared nerve supply. Carcinoma of the nasopharynx, base of tongue, tonsil, pharynx, and larynx can all cause referred otalgia via CN IX (Jacobson's nerve) and CN X (Arnold's nerve). Nasopharyngeal carcinoma specifically causes: unilateral otalgia, nasal obstruction, epistaxis, cervical lymphadenopathy, and cranial nerve palsies.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">The term chemodectoma denotes tumour involving</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Carotid bodies — Chemodectoma = tumour of chemoreceptor tissue (paraganglioma). The carotid body (at the carotid bifurcation) is the most common site — "carotid body tumour." Other sites: jugulotympanic (glomus jugulare), vagal body. Features: slow-growing, pulsatile neck mass at carotid bifurcation, splaying of ICA and ECA on angiography ("Lyre sign"). Treatment: surgical excision.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">The best treatment for cystic hygroma is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Surgical excision — Cystic hygroma (lymphatic malformation/lymphangioma) is best treated by SURGICAL EXCISION, though complete excision is difficult due to infiltration of surrounding structures. Modern alternatives: sclerotherapy with OK-432 (Picibanil) or bleomycin have good results, particularly for macrocystic types. Radiotherapy and chemotherapy are NOT used.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Trotter's Triad is seen in</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Nasopharyngeal carcinoma — Trotter's triad (Trotter's syndrome): (1) Ipsilateral conductive deafness (Eustachian tube involvement), (2) Immobility of the ipsilateral soft palate (pterygoid/palatal muscle infiltration), (3) Ipsilateral trigeminal neuralgia (CN V involvement through skull base). Caused by nasopharyngeal carcinoma invading the lateral wall of the nasopharynx.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Brilliantly transilluminant swelling in the neck is</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Cystic Hygroma — Cystic hygroma (lymphangioma) is the classic BRILLIANTLY TRANSILLUMINANT neck swelling because it is filled with clear lymph fluid in thin-walled cysts. Present at birth or infancy, soft, compressible, posterior triangle. Branchial cyst partially transilluminates; thyroglossal and dermoid do not.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Radical dissection of the neck includes surgical removal of all EXCEPT</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Phrenic nerves — Radical neck dissection (RND) removes: ALL cervical lymph nodes (levels I–V), sternocleidomastoid muscle, internal jugular vein, submandibular gland, tail of parotid, and spinal accessory nerve (CN XI). The PHRENIC NERVE (C3,4,5) is NOT routinely removed — its sacrifice would cause ipsilateral diaphragm paralysis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Structures preserved in modified radical neck dissection are</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Internal jugular vein + accessory nerve + sternocleidomastoid muscle — Modified Radical Neck Dissection (MRND) removes all 5 levels of cervical lymph nodes (same as RND) but PRESERVES one or more of: (1) CN XI (spinal accessory nerve), (2) Internal jugular vein, (3) Sternocleidomastoid muscle. Type III MRND preserves all three — most commonly performed type.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">The most common site of thyroglossal cyst is</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Subhyoid — Repeat of Q1. Subhyoid = ~65–75%. Suprahyoid = ~20%. At foramen caecum (lingual) = ~5%. Infrahyoid near isthmus of thyroid = less common. Key sign: moves on swallowing AND on tongue protrusion (attached to hyoid via tract).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">The following is included in the differential diagnosis of midline neck swellings</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Branchial cyst — Wait — branchial cyst is a LATERAL neck swelling, NOT midline. The book answer appears to be "d) branchial cyst" but this is surprising. Midline neck swellings: thyroglossal cyst, submental lymph nodes, dermoid cyst, thyroid swelling, laryngocele (can be midline), lipoma. Branchial cyst = anterior triangle lateral to SCM = lateral neck. This may be a book error. For MUHS exam purposes, follow the book answer: d.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">All are brilliantly transilluminant swellings EXCEPT</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Dermoid cyst — Repeat. Dermoid cyst = NOT transilluminant (solid contents). This question appears multiple times in the question bank — it is a very high-yield fact.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Cervical lymph nodes are classified into _____ levels</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">5 levels (I–V) — Cervical lymph nodes (Robbins classification): Level I = submental + submandibular, Level II = upper jugular, Level III = middle jugular, Level IV = lower jugular, Level V = posterior triangle. Some classifications add Level VI (central compartment/pretracheal) and Level VII (superior mediastinal). Standard = 5 or 6 levels depending on source.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Following are the incisions for appendicectomy EXCEPT</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Kocher's incision — Kocher's (subcostal) incision is for the RIGHT UPPER QUADRANT — used for cholecystectomy and hepatic surgery, NOT appendicectomy. Appendicectomy incisions: McBurney's (standard oblique over McBurney's point), Lanz (transverse/cosmetic), Rutherford-Morrison (muscle-cutting, for obese patients/difficult access).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">The commonest position for thyroglossal cyst is</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Subhyoid — Third time this appears. Subhyoid is the most common site (~65–75%). High-yield exam fact: thyroglossal cyst moves with tongue protrusion AND swallowing. Treatment: Sistrunk operation (excision of cyst + hyoid body middle third + thyroglossal tract to foramen caecum).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">The nodes most commonly involved in tuberculosis are</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Cervical lymph nodes — Cervical lymphadenopathy is the most common form of peripheral tuberculous lymphadenitis (scrofula). Upper deep cervical and posterior triangle nodes are most commonly affected. Classic feature: multiple nodes, matted, cold abscess formation → collar stud abscess → sinus. Histology: caseating granuloma with Langhans giant cells.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">True about Branchial cyst is</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Mostly arises from 2nd branchial system — ~95% of branchial cysts arise from the 2nd branchial arch/cleft. Located at the anterior border of SCM, junction of upper and middle thirds. Contents: clear fluid with cholesterol crystals, lined by stratified squamous epithelium. Cysts are more common than sinuses. Treatment: surgical excision (not always mandatory for sinuses).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Vital structure preserved during standard radical neck dissection</span><span class="q-year">S-15, W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Vagus nerve — The VAGUS NERVE (CN X) is ALWAYS preserved in both radical and modified radical neck dissection. It runs in the carotid sheath between the carotid artery and internal jugular vein. Sacrificing the vagus nerve causes: ipsilateral vocal cord paralysis, hoarseness, dysphagia, and cardiac arrhythmias.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Malignant cell in Hodgkin's lymphoma is</span><span class="q-year">S-15, W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Reed-Sternberg cell — Wait, the book marks "b) Lymphocyte" but the correct answer clinically is REED-STERNBERG CELL. Reed-Sternberg cells (large binucleate/multinucleate cells with prominent "owl-eye" nucleoli) are the PATHOGNOMONIC malignant cells of Hodgkin's lymphoma. The book's answer "Lymphocyte" appears to be an error. For clinical purposes: Reed-Sternberg. Follow book (b) for MUHS exam.</span></div>
+      <div class="note">Correct clinical answer: Reed-Sternberg cell. Book marks Lymphocyte — this is likely a printing error. Remember for all exams: RS cell = Hodgkin's lymphoma hallmark.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">Carotid artery is palpated against transverse process tubercle of which vertebra?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">C6 (Chassaignac's tubercle) — The carotid artery can be compressed against the ANTERIOR TUBERCLE of the transverse process of C6 (Chassaignac's tubercle) to control bleeding or assess pulse. C6 anterior tubercle is the most prominent and easily palpable carotid compression point in the neck.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">1-year-old child: posterior triangle neck swelling, brilliantly transilluminant. Diagnosis?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Cystic hygroma — Classic presentation: infant/child + posterior triangle + brilliantly transilluminant = CYSTIC HYGROMA (lymphatic malformation). Cystic hygroma is the most common cause of brilliantly transilluminant swelling in the posterior triangle of the neck in children.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Which level of cervical lymph nodes are NOT removed in Supra-omohyoid neck dissection?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Level IV — Supra-omohyoid neck dissection (SOHND) is a selective neck dissection removing levels I, II, and III only (above the omohyoid muscle). Level IV (lower jugular) and Level V (posterior triangle) are NOT removed. Used for oral cavity cancers (N0 neck) where risk of Level IV/V metastasis is low.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">All structures removed in radical neck dissection EXCEPT</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Trapezius muscle — Trapezius muscle is NOT removed in radical neck dissection. RND removes: all 5 levels of cervical lymph nodes, SCM, IJV, CN XI (spinal accessory nerve), submandibular gland, tail of parotid. The trapezius is preserved. Sacrificing CN XI causes trapezius weakness (shoulder drop) but the muscle itself is not excised.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q23</span><span class="q-text">Carotid body tumour</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Originates from Schwann cells — Carotid body tumour (paraganglioma/chemodectoma) arises from CHIEF CELLS (type I glomus cells) and sustentacular cells (type II = modified Schwann cells). The book marks "Schwann cells." Features: slow-growing pulsatile neck mass, "lyre sign" on angiography (splaying of ICA/ECA), may metastasise in ~5%. Surgery is the treatment of choice.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Key Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Thyroglossal cyst — Sistrunk operation, sites, clinical features</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Cystic hygroma — features, treatment</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Modified Radical Neck Dissection — structures removed/preserved (W-21)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Branchial cyst — origin, features, treatment</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Collar stud abscess (M-10)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 49 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch49">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 49</span>
+    <span class="chapter-title">Oropharyngeal Cancer</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">The most common cancer in India is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">CA Breast — Breast cancer is the most common cancer in women in India and now the most common cancer overall in India (surpassing oral/cervical cancer). However, oral cavity cancer is still the most common cancer in Indian MALES. The book marks CA Breast for this question (N-09). CA Oral Cavity is most common in men; CA Cervix was previously #1 in women but now CA Breast leads.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Features of treatment of oral cancer EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Intravenous antibiotics — IV antibiotics are NOT a treatment modality for oral cancer. Oral cancer treatment: (1) Surgery (resection ± reconstruction with flaps), (2) Radiotherapy (external beam ± brachytherapy), (3) Chemotherapy (cisplatin, 5-FU — as sensitiser with RT or for metastatic disease). Antibiotics treat infection, NOT cancer.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">The commonest site for carcinoma tongue is</span><span class="q-year">W-12, W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Lateral aspect in anterior 2/3rd — The lateral border (edge) of the anterior 2/3rd of the tongue is the MOST COMMON site for tongue carcinoma. Mechanical irritation from sharp teeth and tobacco chewing exposure is highest here. The posterior 1/3rd (base of tongue) is considered oropharynx and has different biology/treatment.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Which is NOT true of carcinoma tongue?</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Commonly adenocarcinoma — Carcinoma of the tongue is almost exclusively SQUAMOUS CELL CARCINOMA (SCC), NOT adenocarcinoma. Adenocarcinoma arises from minor salivary glands (rare). All other options are TRUE: lateral border involvement, cervical lymph node metastasis, and tobacco chewing as a risk factor.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Paterson Kelly syndrome is associated with all EXCEPT</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Diarrhoea — Paterson-Kelly (Plummer-Vinson) syndrome = iron deficiency anaemia + glossitis + dysphagia (post-cricoid web). Diarrhoea is NOT a feature. Features: female middle-aged patients, koilonychia, angular cheilitis, glossitis, anaemia, dysphagia. Premalignant for post-cricoid carcinoma (hypopharyngeal SCC).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Commonest cancer of oral cavity is</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Squamous cell carcinoma — &gt;90% of oral cavity malignancies are SCC. The oral mucosa is lined by stratified squamous epithelium, making SCC the dominant cancer type. Salivary gland tumours (minor salivary glands) are rare. Melanoma can occur rarely on the oral mucosa.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Commonest premalignant condition of oral cancer is</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Leukoplakia — Leukoplakia (white patch on oral mucosa that cannot be scraped off and cannot be attributed to any other condition) is the most common oral premalignant condition. Malignant transformation rate: 5–15% over 10 years. Erythroplakia is RARER but has HIGHER malignant potential (~40%). Risk factors: tobacco, alcohol, HPV.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Ulcer over the lateral margin of tongue can be caused by</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Lateral tongue ulcers can result from: trauma (sharp teeth, ill-fitting dentures), tobacco chewing, spices (chemical irritation), SCC, TB, syphilis. In clinical practice, any non-healing lateral tongue ulcer &gt;2–3 weeks must be biopsied to exclude SCC.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Which condition is NOT associated with high risk of malignant transformation?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Sideropenic dysphagia (Paterson-Kelly) — While Paterson-Kelly syndrome does predispose to post-cricoid carcinoma (hypopharyngeal), the risk of malignant transformation is LOWER than erythroplakia (~40%), speckled leucoplakia (~30%), and chronic hyperplastic candidiasis. Erythroplakia has the HIGHEST malignant potential of all oral premalignant lesions.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Carcinoma of the tongue most commonly occurs at</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Lateral border of anterior 2/3 — Repeat of Q3. The lateral border of anterior 2/3 = the oral tongue. This is where tobacco chewing causes maximum mucosal damage and where SCC is most common. The tip and dorsum are much rarer sites.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">All are carcinogens for cancer of head and neck EXCEPT</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Unfluorinated water — Fluoride deficiency causes dental caries but is NOT a carcinogen for head and neck cancer. Established head and neck carcinogens: tobacco (smoking and chewing), alcohol (synergistic with tobacco), betel nut/areca nut, HPV (types 16 and 18), EBV (nasopharyngeal carcinoma), radiation exposure.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Feature of tumour lysis syndrome is</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Alkalosis — Wait, the correct metabolic feature of tumour lysis syndrome (TLS) is ACIDOSIS (from lactic acid + uric acid), NOT alkalosis. The book marks "c) Alkalosis" which appears incorrect clinically. TLS features: HYPERuricaemia, HYPERphosphataemia, HYPERkalaemia, HYPOcalcaemia, and metabolic ACIDOSIS. For MUHS exam follow book answer: c. Clinically remember TLS = "PUKE": Phosphate↑, Uric acid↑, K↑, sEcalcium↓.</span></div>
+      <div class="note">Clinical correction: TLS causes metabolic ACIDOSIS, not alkalosis. Hyperkalaemia, hyperphosphataemia, hyperuricaemia, hypocalcaemia. Book answer (c = Alkalosis) appears to be an error.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Painless ulcer of tongue is due to</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Syphilis — Syphilitic tongue ulcer (primary chancre or gumma) is typically PAINLESS. Primary syphilitic chancre = painless, indurated, clean-based ulcer. Gumma (tertiary syphilis) = painless deep ulcer with punched-out edge. TB ulcers = painful (undermined edge). Carcinoma can be painless early but becomes painful. The classic PAINLESS tongue ulcer = syphilis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">What is the diagnosis of Barium X-ray showing rat-tail appearance?</span><span class="q-year">PG 2020</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Ca oesophagus (irregular rat-tail = carcinoma) — Barium swallow X-ray patterns: IRREGULAR rat-tail/apple-core narrowing = carcinoma oesophagus. REGULAR/smooth rat-tail/bird-beak appearance = Achalasia cardia. Plummer-Wilson = post-cricoid web (upper oesophagus). The note in the book confirms: irregular = Ca oesophagus; regular = Achalasia (bird beak).</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 50 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch50">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 50</span>
+    <span class="chapter-title">Disorders of the Salivary Glands</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions (27 Questions)</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Commonest salivary gland tumour is</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Pleomorphic adenoma — Pleomorphic adenoma (mixed salivary tumour) is the most common salivary gland tumour overall (~60–80% of all salivary gland tumours). Most common in the parotid gland. Features: slow-growing, painless, firm, lobulated, mobile. Risk of malignant transformation: ~5% → carcinoma ex-pleomorphic adenoma if left untreated.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Stones are most common in which gland?</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Submandibular gland — Submandibular gland stones (sialolithiasis) account for ~80–90% of all salivary calculi. Reasons: (1) Wharton's duct is long, runs uphill, has a wide opening, (2) Submandibular saliva is more alkaline, mucoid, and calcium-rich, (3) Duct has an upward curve against gravity. Parotid stones = only ~10–15%.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Sjögren's syndrome refers to disease of</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Parotid gland — Sjögren's syndrome is an autoimmune exocrinopathy primarily affecting salivary (especially parotid) and lacrimal glands → xerostomia (dry mouth) + keratoconjunctivitis sicca (dry eyes). The parotid gland is characteristically enlarged bilaterally. Associated with rheumatoid arthritis, SLE, anti-Ro/SSA and anti-La/SSB antibodies.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">In submandibular gland surgery, nerve LEAST likely to be injured is</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Hypoglossal nerve — During submandibular gland excision, nerves at risk: (1) Lingual nerve (superficial, most commonly injured — sensation to anterior 2/3 tongue), (2) Marginal mandibular branch of facial nerve (motor to depressors of lower lip — superficial, frequently injured), (3) Hypoglossal nerve (lies deep to gland — least likely to be injured). The PG entrance 2021 answer (Q27) also confirms lingual = most commonly injured.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Salivary stones occur most commonly in</span><span class="q-year">N-04, N-09, M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Submandibular gland — Repeat of Q2. Submandibular = 80–90% of all salivary calculi. Clinical: post-meal swelling + pain (obstructive sialadenitis), bimanual palpation of floor of mouth, plain X-ray (80% are radio-opaque), sialography, ultrasound.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Functioning parotid tumour is usually</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Benign and Single — Warthin's tumour (adenolymphoma) is the only "functioning" (technetium-99m scanning shows uptake) benign parotid tumour. It is classically benign, can be bilateral (~10%), and occurs predominantly in older male smokers. Pleomorphic adenoma (most common) is also benign but does not take up technetium.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Parotid duct is</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Stenson's duct — Parotid duct = Stensen's duct (opens into the oral cavity opposite the upper 2nd molar). Submandibular duct = Wharton's duct (opens at sublingual caruncle on floor of mouth). Sublingual duct = Bartholin's duct (opens with Wharton's duct). Pancreatic duct = Duct of Wirsung.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">The submandibular salivary gland is drained by</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Wharton's duct — Submandibular gland = Wharton's duct. Opens at the sublingual caruncle (papilla) on the floor of the mouth, lateral to the frenulum. Runs forward and medial under the mucosa of the floor of mouth, passing around the posterior border of mylohyoid.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Treatment of choice for pleomorphic adenoma of parotid gland is</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Superficial parotidectomy — Pleomorphic adenoma of parotid = SUPERFICIAL PAROTIDECTOMY (for superficial lobe tumours — where most occur). Enucleation has &gt;40% recurrence (tumour has pseudopod extensions beyond capsule). Total parotidectomy is for deep lobe or malignant tumours. Superficial parotidectomy with facial nerve preservation is the gold standard.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Lingual nerve, hypoglossal nerve and facial artery and vein are important surgical anatomy relations of</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Submandibular salivary gland — These are the critical surgical anatomy relations around the submandibular gland: Lingual nerve (above gland, loops around Wharton's duct), Hypoglossal nerve (below gland, medial), Marginal mandibular branch of facial nerve (superficial to the gland), Facial artery and vein (pass through the gland substance).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Common causes of parotid swelling are EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Ascending sialadenitis in elderly patient — "Ascending sialadenitis in elderly" = ascending infection due to poor oral hygiene/dehydration/reduced salivary flow in elderly — this IS actually a common cause of acute bacterial parotitis in elderly/post-op patients. The book marks this as EXCEPT. More likely the "Tracuna" (trauma — option b, appears to be a typo for "Trauma") is the exception. Follow book answer: d for exam.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Highest likelihood of a tumour being malignant in salivary glands is from</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Minor salivary glands — The SMALLER the salivary gland, the HIGHER the proportion of malignant tumours. Minor salivary glands: ~50–80% malignant. Sublingual: ~50% malignant. Submandibular: ~50% malignant. Parotid: only ~20–25% malignant (but largest volume of tumours). Rule: "The smaller the gland, the more likely the tumour is malignant."</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">The most common cause of parotid swelling is</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Pleomorphic adenoma — Pleomorphic adenoma is the most common cause of a UNILATERAL parotid swelling/lump (neoplastic). Bilateral parotid swelling: mumps, Sjögren's, sarcoidosis, alcoholic liver disease. Overall (including non-neoplastic causes): mumps is most common inflammatory cause, but for a clinic lump referral, pleomorphic adenoma is most common.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">Salivary gland calculi are</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Easily palpable by fingers (bimanual palpation) — Submandibular calculi in the duct (Wharton's duct on floor of mouth) can be EASILY PALPATED bimanually (finger in floor of mouth + external palpation). They are NOT most common in parotid (submandibular = most common). NOT associated with renal calculi. NOT diagnosed by lacrimal duct probe.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Treatment of small benign tumor of superficial lobe of parotid is</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Superficial parotidectomy — Repeat of Q9. Even small benign tumours (pleomorphic adenoma) require superficial parotidectomy, NOT enucleation. Enucleation leaves microscopically positive margins and has &gt;40% local recurrence rate. Superficial parotidectomy with facial nerve identification and preservation is the minimum appropriate surgery.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Most common salivary gland affected by neoplasms</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Parotid — The parotid gland is the most commonly involved salivary gland in NEOPLASMS (both benign and malignant) due to its large size. ~70–80% of all salivary gland neoplasms occur in the parotid. However, the PROPORTION of malignant tumours is lowest in the parotid (~20%) compared to other glands.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Sialography is contraindicated in</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Acute parotitis — Sialography (contrast injection into salivary duct for imaging) is CONTRAINDICATED in ACUTE INFECTION because: (1) injection is painful, (2) contrast may worsen infection, (3) duct cannulation risks bacteraemia. Sialography IS indicated for: ductal calculi, chronic/recurrent sialadenitis, ductal strictures, and Sjögren's evaluation. Perform only when acute infection has resolved.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">In which head and neck cancer is perineural invasion most commonly seen?</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Adenoid cystic carcinoma — Adenoid cystic carcinoma (AdCC) of the salivary glands is notorious for PERINEURAL INVASION — it spreads along nerve sheaths (perineural invasion) causing pain and nerve palsies. Features: slow-growing, multiple recurrences, late distant metastases (lungs), poor long-term prognosis. Most common malignant tumour of submandibular and minor salivary glands.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">What is Ranula?</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Retention cyst of sublingual gland — Ranula = translucent, bluish-tinged swelling on the floor of the mouth = RETENTION CYST (or extravasation cyst) of the SUBLINGUAL gland. Looks like a frog's belly (Latin: rana = frog). Plunging ranula = when it extends through the mylohyoid muscle into the neck. Treatment: marsupialization or excision with sublingual gland.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Most common tumour of parotid gland is</span><span class="q-year">W-15, S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Pleomorphic adenoma — Repeat of Q1 and Q13. Pleomorphic adenoma = most common parotid tumour. 2nd most common benign parotid tumour: Warthin's tumour (adenolymphoma). Most common malignant parotid tumour: mucoepidermoid carcinoma (low/intermediate grade) or adenoid cystic carcinoma.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Commonest salivary gland to get stone is</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Submandibular gland — Repeat. Submandibular = 80–90% of all salivary stones.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">Sialolithiasis is more common in which salivary gland?</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Submandibular gland — Repeat confirmation. Submandibular calculi are most common due to: long, tortuous, gravity-opposing duct; alkaline, mucoid, calcium-rich saliva; narrow bend at posterior mylohyoid.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q23</span><span class="q-text">Starch iodine test is used to clinically demonstrate symptoms of</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Frey's syndrome (auriculotemporal nerve syndrome) — Frey's syndrome = gustatory sweating after parotidectomy. Aberrant regeneration of parasympathetic secretomotor fibres (from auriculotemporal nerve) → innervate sweat glands of overlying skin → sweating/flushing when eating. Starch-iodine test (Minor's test): apply iodine to skin, dust with starch → area turns blue on sweating during eating.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q24</span><span class="q-text">All help in localising facial nerve in parotid gland surgery EXCEPT</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Internal jugular vein — The IJV is not used as a landmark for facial nerve identification in parotidectomy. Landmarks for finding the facial nerve trunk: (1) Tragal pointer (1 cm deep and inferior to tragal cartilage), (2) Posterior belly of digastric muscle (nerve lies just superficial to it), (3) Mastoid tip, (4) Tympanomastoid suture line, (5) Nerve stimulator. IJV is a neck landmark, not parotid surgery landmark.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q25</span><span class="q-text">Duct of submandibular salivary gland is known as</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Wharton's duct — Repeat of Q8. Submandibular = Wharton's duct. Parotid = Stensen's duct. Sublingual = Bartholin's duct (major). Pancreatic = Duct of Wirsung. Santorini's duct = accessory pancreatic duct.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q26</span><span class="q-text">Commonest salivary gland to get stone is</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Submandibular — Fourth time this appears. Submandibular = the definitive answer for salivary gland stones. Memorise: 80–90% submandibular, ~10–15% parotid, &lt;5% sublingual/minor.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q27</span><span class="q-text">Most common nerve injured during submandibular gland surgery?</span><span class="q-year">PG 2021</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Lingual nerve — The lingual nerve (sensory to anterior 2/3 tongue) is the most commonly injured nerve during submandibular gland excision. It loops around Wharton's duct ("hooks" around the duct) and must be identified and preserved. Injury → numbness of ipsilateral anterior 2/3 tongue. The marginal mandibular branch is also at risk (motor to lower lip).</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Duct Anatomy Quick Reference</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">📌</span><span>Parotid → Stensen's duct → opens at upper 2nd molar</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Submandibular → Wharton's duct → opens at sublingual caruncle</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Sublingual → Bartholin's duct (major) + multiple ducts of Rivinus</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Stones: 80–90% submandibular, ~10–15% parotid</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Malignancy risk: Minor &gt; Sublingual &gt; Submandibular &gt; Parotid</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Most common tumour: Pleomorphic adenoma. Superficial parotidectomy = treatment</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 51 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch51">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 51</span>
+    <span class="chapter-title">The Thyroid and Parathyroid Glands</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Symptoms of thyrotoxicosis are controlled most rapidly by</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Propranolol — Beta-blockers (propranolol) control the SYMPATHOMIMETIC SYMPTOMS of thyrotoxicosis MOST RAPIDLY: tachycardia, tremor, anxiety, sweating, palpitations — within hours. Propyl-thiouracil and carbimazole take weeks to reduce thyroid hormone synthesis. Potassium iodide (Lugol's solution) reduces vascularity pre-operatively within days. Propranolol = fastest symptomatic relief.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Hypoparathyroidism is seen after</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Thyroidectomy — Hypoparathyroidism (→ hypocalcaemia → tetany) is a well-known complication of thyroidectomy due to inadvertent removal or devascularisation of the parathyroid glands. Also occurs after block dissection of neck (radical neck dissection). Parathyroid insufficiency typically manifests 2–5 days post-operatively (when calcium stores are depleted).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Carbimazole in hyperthyroidism acts by</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Inhibition of iodination of tyrosine — Carbimazole (and propylthiouracil = PTU) inhibit thyroid peroxidase enzyme → prevent iodination of tyrosine residues on thyroglobulin → reduce T3/T4 synthesis. PTU ADDITIONALLY inhibits peripheral conversion of T4→T3. Carbimazole does NOT affect T4 release. Takes 4–6 weeks for effect (pre-formed hormone stores must deplete).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Most common thyroid carcinoma is</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Papillary carcinoma — Papillary thyroid carcinoma (PTC) is the most common thyroid malignancy (~80–85%). Features: most common in young females, tends to spread via lymphatics (cervical lymph nodes), excellent prognosis, "orphan Annie eye nuclei," psammoma bodies on histology, associated with radiation exposure. BRAF V600E mutation in ~60%.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Thyroid lymphoma is treated by</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Chemoradiation — Primary thyroid lymphoma (usually diffuse large B-cell lymphoma or MALT lymphoma) is treated with CHEMORADIATION (combined chemotherapy + radiotherapy). Surgery has a limited role — only for diagnosis (core biopsy) or emergency airway decompression. Associated with Hashimoto's thyroiditis (risk of lymphoma is 50–70× higher). CHOP regimen + radiotherapy.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">The commonest cause of hyperparathyroidism is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Single gland hyperplasia — Wait, the book marks "c) Single gland hyperplasia" but the clinically correct answer is SINGLE PARATHYROID ADENOMA (~80–85% of primary hyperparathyroidism). Multigland hyperplasia = ~15%. The book answer appears incorrect. For MUHS: follow book (single gland hyperplasia = c). For clinical practice: single adenoma is by far the most common cause.</span></div>
+      <div class="note">Clinical correction: Single parathyroid adenoma = 80–85% of primary hyperparathyroidism. Book marks "single gland hyperplasia" — this appears to be an error. Remember for PG exams: adenoma is most common.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Commonest presentation of medullary carcinoma of thyroid is</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Diarrhoea — Medullary thyroid carcinoma (MTC) arises from parafollicular C-cells that secrete CALCITONIN. Diarrhoea is the most common functional symptom (from calcitonin, prostaglandins, and VIP secretion causing hypermotility). Other features: neck mass, cervical lymphadenopathy, flushing. Elevated serum calcitonin = tumour marker for MTC. Associated with MEN 2A (RET proto-oncogene mutation).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Parathyroid insufficiency following thyroid surgery most commonly presents</span><span class="q-year">M-10, N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">2–5 days — Post-thyroidectomy hypocalcaemia typically manifests 24–72 hours (most commonly 2–5 days) after surgery, when pre-existing calcium stores are depleted and remaining parathyroid glands (if accidentally devascularised) fail to compensate. Transient hypoparathyroidism is more common (~10%); permanent hypoparathyroidism is less common (~1%).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Thyroid carcinoma which produces high level of serum calcitonin is</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Medullary carcinoma — MTC arises from C-cells (parafollicular cells) that produce CALCITONIN. Serum calcitonin is the specific tumour marker for MTC. Calcitonin level is used for: diagnosis, post-operative follow-up, and family screening. Stimulation test (pentagastrin or calcium) elevates calcitonin in MTC and in gene carriers (RET mutation).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">The normal range of free T4 is</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">10–30 pmol/litre — Normal free T4 (fT4) = 10–25 pmol/L (approximately). The book states 10–30 pmol/litre. Normal free T3 = 3.5–7.5 pmol/litre. TSH normal = 0.4–4.0 mIU/L. Hyperthyroidism: ↑T4, ↑T3, ↓TSH. Hypothyroidism: ↓T4, ↓T3, ↑TSH.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Following are the clinical types of thyrotoxicosis EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Thyroid cancer — Thyroid cancer does NOT typically cause thyrotoxicosis (differentiated thyroid carcinomas are hormonally non-functional in most cases). Clinical types of thyrotoxicosis: (1) Diffuse toxic goitre (Graves' disease), (2) Toxic nodule (Plummer's disease), (3) Toxic multinodular goitre, (4) Thyroiditis (transient), (5) Exogenous thyroid hormone ingestion. Cancer ≠ thyrotoxicosis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Absolute indication for surgery in hyperparathyroidism are all EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Low serum calcium level — LOW calcium is NOT an indication for hyperparathyroidism surgery (it is the opposite of what occurs!). Hyperparathyroidism causes HIGH calcium. Absolute indications for parathyroidectomy in primary HPT: serum Ca &gt;2.8 mmol/L (or &gt;0.25 mmol/L above normal), renal calculi/nephrocalcinosis, marked bone density reduction (T-score &lt;–2.5), age &lt;50, symptoms (fatigue, weakness, depression, polyuria).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Medullary carcinoma of the thyroid arises from</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Parafollicular cells (C-cells) — MTC arises from PARAFOLLICULAR C-CELLS (not follicular cells). C-cells are derived from neural crest and are scattered within the thyroid parenchyma. They produce calcitonin. This explains why MTC: (1) is not iodine-avid (no RAI uptake), (2) produces calcitonin, (3) is associated with MEN 2A/2B (RET mutations affecting neural crest derivatives).</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Thyroid Cancer Quick Reference</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">📌</span><span>Papillary (80–85%) = Most common, lymphatic spread, orphan Annie nuclei, psammoma bodies, BRAF mutation, best prognosis</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Follicular (10–15%) = Haematogenous spread (bone/lung), capsular/vascular invasion, RAS/PAX8-PPARγ mutation</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Medullary (~5%) = C-cells, calcitonin marker, MEN 2A/2B, RET mutation, diarrhoea, NO RAI uptake</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Anaplastic (&lt;1%) = Worst prognosis, elderly, rapid growth, compressive symptoms, no specific treatment</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Propranolol = fastest symptom control in thyrotoxicosis. Carbimazole = inhibits iodination of tyrosine</span></div>
+    <div class="saq-item"><span class="saq-num">📌</span><span>Post-thyroidectomy hypocalcaemia: manifests 2–5 days. Trousseau's sign + Chvostek's sign</span></div>
+  </div>
+</div>
+
+<!-- MASTER CHEAT SHEET -->
+<div class="footer-note">
+  <div class="cheatsheet">
+    <h3>🔑 Head &amp; Neck High-Yield Summary</h3>
+    <ul>
+      <li>Thyroglossal cyst: SUBHYOID most common (65–75%). Moves with tongue protrusion. Treatment: Sistrunk operation</li>
+      <li>Branchial cyst: 95% from 2nd arch. Anterior border SCM. Contains cholesterol crystals</li>
+      <li>Cystic hygroma: Posterior triangle. Brilliantly transilluminant. Treatment: surgical excision or sclerotherapy</li>
+      <li>Trotter's triad: NPC → deafness + soft palate immobility + trigeminal neuralgia</li>
+      <li>Carotid body tumour: "Lyre sign" on angiography. Compression between ICA and ECA</li>
+      <li>Radical neck dissection: removes SCM, IJV, CN XI + all lymph nodes. Vagus nerve always preserved</li>
+      <li>MRND Type III: preserves IJV + CN XI + SCM. Lymph nodes all removed</li>
+      <li>Cervical lymph nodes: 5 levels (Robbins classification)</li>
+      <li>Cleft lip repair: 3–6 months (Rule of Tens). Cleft palate: 9–18 months</li>
+    </ul>
+
+    <h3>🦷 Salivary Gland High-Yield</h3>
+    <ul>
+      <li>Parotid duct = Stensen's. Submandibular = Wharton's. Sublingual = Bartholin's</li>
+      <li>Stones: 80–90% submandibular. Parotid stones = only 10–15%</li>
+      <li>Most common tumour: Pleomorphic adenoma. Treatment = superficial parotidectomy (NOT enucleation)</li>
+      <li>Malignancy risk: Minor &gt; Sublingual &gt; Submandibular &gt; Parotid</li>
+      <li>Adenoid cystic carcinoma = most common malignant minor salivary gland tumour = perineural invasion</li>
+      <li>Frey's syndrome = gustatory sweating post-parotidectomy. Diagnosed by Minor's starch-iodine test</li>
+      <li>Sialography CONTRAINDICATED in acute infection</li>
+      <li>Most common nerve injured in submandibular surgery = Lingual nerve</li>
+      <li>Sjögren's syndrome = parotid + lacrimal glands. Anti-Ro/SSA, anti-La/SSB antibodies</li>
+      <li>Ranula = retention cyst sublingual gland. "Plunging ranula" = extends into neck</li>
+    </ul>
+
+    <h3>🦋 Thyroid High-Yield</h3>
+    <ul>
+      <li>Most common thyroid cancer = Papillary. Most common in young women. Lymph spread. Psammoma bodies</li>
+      <li>Medullary cancer = C-cells = calcitonin = diarrhoea = MEN 2A/2B = RET mutation. NO RAI uptake</li>
+      <li>Propranolol = fastest symptom control. Carbimazole = inhibits thyroid peroxidase = blocks iodination</li>
+      <li>Post-thyroidectomy hypocalcaemia = 2–5 days. Signs: Trousseau's + Chvostek's. Give IV calcium gluconate</li>
+      <li>Thyroid lymphoma = Chemoradiation. Associated with Hashimoto's thyroiditis</li>
+      <li>Primary hyperparathyroidism: most common cause = single adenoma (80%). Book says single gland hyperplasia</li>
+      <li>Indication to NOT operate: LOW serum calcium (opposite of HPT). Operate when Ca &gt;2.8 mmol/L, renal stones, bone loss</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="navigation-bar" style="display: flex; justify-content: space-between; max-width: 900px; margin: 2rem auto; padding: 1.5rem; border-top: 2px solid #e5e7eb; font-family: 'Inter', system-ui, sans-serif;">
+  <a href="MBBS_Surgery_MCQ_Answers_Part4_Final.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">⬅️ Previous Part</a>
+  <a href="index.html" style="padding: 0.75rem 1.5rem; background-color: #f3f4f6; color: #111827; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s;">🏠 Home List</a>
+  <div style="width: 150px;"></div>
+</div>
+
+</body>
+</html>
