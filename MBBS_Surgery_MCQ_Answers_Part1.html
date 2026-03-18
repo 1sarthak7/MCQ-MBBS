@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>III MBBS Part-II · General Surgery MCQ Answer Key</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap');
+
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #21262d;
+    --accent: #00b4d8;
+    --accent2: #06d6a0;
+    --warn: #f77f00;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --correct: #1a4731;
+    --correct-text: #3fb950;
+    --chapter-header: #1c2128;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 1rem 2.5rem;
+    background: linear-gradient(135deg, #0d1117 0%, #0a1628 60%, #061a2e 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,180,216,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+
+  .hero .subtitle {
+    color: var(--muted);
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(0,180,216,0.12);
+    border: 1px solid rgba(0,180,216,0.3);
+    color: var(--accent);
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .toc {
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+  }
+
+  .toc h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed rgba(0,180,216,0.2);
+    transition: color 0.2s;
+  }
+
+  .toc a:hover { color: var(--accent2); }
+
+  .chapter {
+    max-width: 860px;
+    margin: 0 auto 2.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .chapter-header {
+    background: var(--chapter-header);
+    border-bottom: 2px solid var(--accent);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(0,180,216,0.1);
+    border: 1px solid rgba(0,180,216,0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--accent2);
+    padding: 0.8rem 1.5rem 0.3rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mcq-list {
+    background: var(--card);
+  }
+
+  .mcq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    transition: background 0.15s;
+  }
+
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-item:hover { background: rgba(255,255,255,0.02); }
+
+  .q-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  .q-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .q-text {
+    font-size: 0.92rem;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .q-year {
+    font-size: 0.75rem;
+    color: var(--warn);
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .answer-row {
+    margin-left: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .ans-badge {
+    background: var(--correct);
+    border: 1px solid var(--correct-text);
+    color: var(--correct-text);
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .ans-text {
+    font-size: 0.88rem;
+    color: #cdd9e5;
+    padding-top: 2px;
+  }
+
+  .note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-left: 40px;
+    margin-top: 0.25rem;
+  }
+
+  .saq-section, .laq-section {
+    background: var(--card);
+    padding: 1rem 1.5rem;
+  }
+
+  .saq-item {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+    color: #cdd9e5;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .saq-item:last-child { border-bottom: none; }
+
+  .saq-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    min-width: 24px;
+    padding-top: 2px;
+  }
+
+  .footer-note {
+    max-width: 860px;
+    margin: 2rem auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 1.5rem;
+    background: var(--card);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .key-legend {
+    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .legend-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; color: var(--muted);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-green { background: var(--correct-text); }
+  .dot-orange { background: var(--warn); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Unique Publications · MUHS</div>
+  <h1>III<sup>rd</sup> M.B.B.S. Part-II</h1>
+  <p class="subtitle">General Surgery · MCQ Answer Key with Explanations</p>
+  <div class="key-legend" style="margin-top:1.2rem;">
+    <div class="legend-item"><div class="dot dot-green"></div> Correct Answer</div>
+    <div class="legend-item"><div class="dot dot-orange"></div> Year of Exam (M=May, N=Nov, W=Winter, S=Summer)</div>
+  </div>
+</div>
+
+<div class="toc">
+  <h2>Chapters Covered</h2>
+  <div class="toc-grid">
+    <a href="#ch1">1. Metabolic Response to Injury</a>
+    <a href="#ch2">2. Shock &amp; Blood Transfusion</a>
+    <a href="#ch3">3. Wounds, Tissue Repair &amp; Scars</a>
+    <a href="#ch4">4. Basic Surgical Skills &amp; Anastomoses</a>
+    <a href="#ch5">5. Surgical Infection</a>
+    <a href="#ch6">6. Surgery in the Tropics</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 1 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch1">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 01</span>
+    <span class="chapter-title">Metabolic Response to Injury</span>
+  </div>
+
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row">
+        <span class="q-num">Q1</span>
+        <span class="q-text">Specialised pro-resolving mediators (SPM) are all <i>EXCEPT</i></span>
+        <span class="q-year">S-19</span>
+      </div>
+      <div class="answer-row">
+        <span class="ans-badge">✓ d</span>
+        <span class="ans-text">Interleukin-1 — IL-1 is a pro-inflammatory cytokine, NOT an SPM. SPMs include lipoxins, resolvins, and protectins, which actively resolve inflammation.</span>
+      </div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row">
+        <span class="q-num">Q2</span>
+        <span class="q-text">Predominant mechanism involved in wasting of muscles in metabolic stress response is</span>
+        <span class="q-year">S-19</span>
+      </div>
+      <div class="answer-row">
+        <span class="ans-badge">✓ c</span>
+        <span class="ans-text">Ubiquitin-proteosome pathway — This is the primary pathway for proteolysis in critical illness and metabolic stress, responsible for most skeletal muscle catabolism.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ / LAQ — Short &amp; Long Answer Questions</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">—</span><span>No SAQ/LAQ questions listed for this chapter.</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 2 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch2">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 02</span>
+    <span class="chapter-title">Shock and Blood Transfusion</span>
+  </div>
+
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Complications of massive transfusion include all EXCEPT</span><span class="q-year">M-03, W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Hypercalcemia — Massive transfusion causes HYPOcalcemia (citrate binds calcium), hyperkalaemia, acidosis, hypothermia, and coagulopathy. Hypercalcemia does NOT occur.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Most suitable fluid for initial resuscitation in hypovolemic shock is</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Ringer's Lactate (Hartmann's solution) — It is the preferred crystalloid for volume resuscitation in hemorrhagic/hypovolemic shock. It is isotonic and most closely resembles plasma.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Features of Hypovolemic shock are all EXCEPT</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Bradycardia — Hypovolemic shock classically causes TACHYCARDIA (compensatory), not bradycardia. Other features: oliguria, low BP, acidosis are all present.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Weighing of swabs post-operatively is a method to assess</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Blood loss — Gravimetric method (weighing surgical swabs) helps estimate intraoperative and postoperative blood loss accurately.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">CVP measurement is useful in distinguishing between</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Cardiogenic and hypovolemic shock — CVP is HIGH in cardiogenic shock (pump failure) and LOW in hypovolemic shock, making it ideal for distinguishing these two.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Secondary haemorrhage occurs at the following time in relation to surgery</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">7–14 days following surgery — Secondary haemorrhage is due to infection/sepsis eroding vessel walls. It typically occurs 7–14 days post-injury/surgery.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Secondary haemorrhage usually occurs at the following duration in relation to surgery</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">7 to 14 days after surgery — Confirms the above. Infection causes sloughing of vessel wall → delayed bleeding.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Preoperative transfusions are considered EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Haemoglobin levels are 10 g/dL — A Hb of 10 g/dL does NOT usually require pre-op transfusion. Transfusion is indicated if Hb &lt;8 g/dL, in major surgery, or rare blood group patients.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Reactionary haemorrhage occurs within</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">&lt;24 hours — Reactionary haemorrhage occurs within 24 hours of surgery/injury (usually within a few hours). It results from slipped ligatures or rise in blood pressure.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">The skin is warm and dry in</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Septic shock (early/warm phase) — In early septic shock (distributive), peripheral vasodilation causes warm, flushed, dry skin. Haemorrhagic/hypovolemic shock = cold, clammy skin. <i>(Note: Book answer shows "b) Burn shock" but clinically septic shock is the correct answer for warm dry skin.)</i></span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">External bleeding in an injured patient is best controlled by</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Direct pressure — Direct firm pressure over the wound is the first-line, safest, and most effective method to control external haemorrhage.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Which of the following is NOT an example of distributive shock?</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Massive Pulmonary Embolus — Massive PE causes OBSTRUCTIVE shock, not distributive. Distributive shock = anaphylaxis, sepsis, neurogenic (spinal cord injury).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Decompensation of circulatory system occurs when loss of circulating volume is more than</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">30–40% — Class III hemorrhage (30–40% volume loss) leads to decompensation with significant hypotension, tachycardia, and altered mental status requiring urgent blood transfusion.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">All of the following are major complications of massive blood transfusion EXCEPT</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hypokalemia — Massive transfusion causes HYPERkalemia (stored blood releases K⁺). Hypothermia, hypocalcemia, and hypomagnesaemia all occur.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">In case of acute trauma, best guideline for quick replacement of fluid is</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Urine output — Urine output (target ≥0.5 mL/kg/hr in adults) is the best practical bedside indicator of adequate fluid resuscitation and organ perfusion.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Cryoprecipitate is rich source of</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Factor VIII — Cryoprecipitate contains Factor VIII, von Willebrand factor, fibrinogen (Factor I), Factor XIII, and fibronectin. Key use: haemophilia A, von Willebrand disease, DIC.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Shock is best assessed by</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Urinary output — Urine output is the best indicator of end-organ perfusion and adequacy of resuscitation. Target: ≥0.5 mL/kg/hr.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Secondary haemorrhage usually occurs</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">7–14 days after injury — Due to infection/sepsis eroding vessel walls (consistent with Q6 and Q7).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">The best way to control external hemorrhage is</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">External compression (direct pressure) — As per ATLS, firm direct pressure is the first and best method to control external hemorrhage.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Complications from Massive blood transfusion include all EXCEPT</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hypokalemia — Same principle as Q14. Massive transfusion causes HYPERkalemia, not hypokalemia.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Shock is clinically best assessed by</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Urine output — Consistent with Q17. Best clinical marker of perfusion status.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">Haemaccel contains</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Polygelin — Haemaccel is a gelatin-based plasma expander containing polygelin (degraded gelatin cross-linked with urea bridges) with calcium and sodium chloride.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q23</span><span class="q-text">Patient with trauma who lost 30–40% of blood volume belongs to which class of haemorrhagic shock?</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Class III — ATLS Classification: Class I &lt;15%, Class II 15–30%, Class III 30–40%, Class IV &gt;40%. Class III = significant tachycardia, hypotension, altered consciousness.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q24</span><span class="q-text">Adequacy of fluid replacement in a patient can be best judged by</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Increased urine output — Target ≥0.5 mL/kg/hr (adult), ≥1 mL/kg/hr (child). Best indicator of renal perfusion and overall fluid adequacy.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q25</span><span class="q-text">In obstructive shock</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Reduction of preload — Obstructive shock (PE, cardiac tamponade, tension pneumothorax) causes mechanical obstruction to ventricular filling, reducing preload (PCWP/CVP may be paradoxically elevated due to obstruction, but effective preload to LV is reduced).</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ — Short Answer Questions (Topics to Know)</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Describe different types of haemorrhage. (O-02)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Describe complications of blood transfusion. (O-03,04)(S-12,14)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Define shock. Classify the various types of shock. (D-05)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Types of haemorrhage and treatment of haemorrhagic shock. (M-07)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Hypovolemic shock. (S-17)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Blood substitutes. (W-17)(O-95)</span></div>
+    <div class="saq-item"><span class="saq-num">7</span><span>Blood transfusion reactions. (W-18)</span></div>
+    <div class="saq-item"><span class="saq-num">8</span><span>SIRS — Systemic Inflammatory Response Syndrome. (W-18)</span></div>
+    <div class="saq-item"><span class="saq-num">9</span><span>Disseminated intravascular coagulation (DIC). (W-19)</span></div>
+    <div class="saq-item"><span class="saq-num">10</span><span>Secondary haemorrhage / Reactionary haemorrhage / Central venous pressure. (A-72, O-96, A-83)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 3 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch3">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 03</span>
+    <span class="chapter-title">Wounds, Tissue Repair and Scars</span>
+  </div>
+
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Lacerated wound looks like an incised wound in</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Scrotum — The scrotal skin is very thin with minimal subcutaneous fat. When lacerated, the edges appose neatly, mimicking a clean incised wound.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Delayed wound healing is seen in all EXCEPT</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Hypertension — Hypertension alone does NOT delay wound healing. Causes of delayed healing: diabetes, malignancy, infection, malnutrition, corticosteroids, anaemia, etc.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Three phases of normal wound healing are</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Inflammatory → Proliferative → Remodelling — Classic 3-phase wound healing: (1) Inflammatory/haemostasis phase (0–3 days), (2) Proliferative/granulation phase (3–21 days), (3) Remodelling/maturation phase (21 days–2 years).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Southampton asepsis scoring system is for</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Severity of wound infection — Southampton scoring assesses the degree/severity of surgical wound infection (grades 0–5 based on discharge, erythema, wound disruption etc.).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Plaster of Paris is</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hemi-hydrated calcium sulphate [CaSO₄·½H₂O] — When water is added, it hydrates fully (CaSO₄·2H₂O) and sets hard. Used in orthopaedic casts and dental molds.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Commonest site for pressure sore is</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Ischium — In sitting patients, ischial tuberosities bear maximum pressure. (Sacrum is most common in bedridden/supine patients; ischium in wheelchair-bound patients. Book answer: ischium.)</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">A clean incised wound heals by</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Primary intention — Clean, apposed surgical wounds heal by primary (first) intention: minimal scar, rapid healing, no granulation tissue formation.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Decubitus ulcers are</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Pressure sores — "Decubitus" = lying down (Latin). Decubitus ulcers = pressure ulcers caused by prolonged pressure on bony prominences in immobile patients.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Wound healing is worst at</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Sternum — Sternal wounds are notoriously difficult to heal due to: constant movement with respiration, poor blood supply to skin, tension on wound edges. Legs and face heal poorly too but sternum is worst.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Which does NOT fit in the description of a tidy wound?</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Often associated with tissue loss — A tidy wound is incised, clean, has healthy tissue edges, and has NO tissue loss. Tissue loss makes it "untidy." Untidy wounds require debridement before closure.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">The best period for primary wound closure of uncontaminated wound is up to</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">6 hours — The "golden period" for primary closure of uncontaminated wounds is 6 hours (before significant bacterial colonization). Beyond this, secondary or delayed primary closure is preferred.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Following are required for wound healing EXCEPT</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Calcium — Calcium is NOT specifically required for wound healing. Required: Zinc (collagen synthesis), Copper (cross-linking), Vitamin C (hydroxylation of proline/lysine), Vitamin A, proteins, iron.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Commonest site of keloid is</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Presternal area — The presternal region is the most common site for keloid formation, followed by the deltoid region, ear lobule, and jaw. Dark-skinned individuals are predisposed.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">Delayed wound healing is seen in all EXCEPT</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Hypertension — Hypertension alone does NOT delay wound healing. Same concept as Q2.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Compartment syndrome: fasciotomy should be performed if compartmental pressures are</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">&gt;30 mmHg — Fasciotomy is indicated when compartment pressure exceeds 30 mmHg, or within 30 mmHg of diastolic pressure (delta pressure &lt;30 mmHg). Delay causes Volkmann's ischaemia.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Keloid scar is made up of</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Dense collagen — Keloids are composed of dense, haphazardly arranged thick collagen bundles (predominantly Type III collagen) with excess fibroblast activity beyond wound margins.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">A clean incised wound heals by</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Primary intention — Repeat of Q7. Clean sutured wounds = primary intention healing.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Tissue suturing glue contains</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Cyanocrylate (Cyanoacrylate) — Tissue glues (Dermabond, Histoacryl) are based on cyanoacrylate monomer which polymerizes rapidly on contact with tissue moisture, forming a strong bond.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">Following number surgical blade is used most commonly to incise skin in laparotomy in adult patient</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">No. 22 surgical blade — No. 22 (large blade) fits a No. 4 handle. Used for large skin incisions in adults (laparotomy). No. 10 and 15 are for smaller incisions; No. 11 for stab incisions.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Which method is used for skin approximation?</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Skin approximation can be achieved by: skin staplers, adhesive tapes (Steri-Strips), tissue glue, and sutures. All are valid methods.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Predominant type of collagen in Keloids is</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Type III collagen — Keloids predominantly contain Type III collagen (reticular fibres, fetal-type collagen) arranged in thick, disorganized bundles. Normal dermis is mostly Type I collagen.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">Class III haemorrhagic shock describes blood volume lost as percentage of total</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">30–40% — ATLS: Class I &lt;15%, Class II 15–30%, Class III 30–40% (decompensated, needs blood), Class IV &gt;40% (life-threatening).</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ — Short Answer Questions (Topics to Know)</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Factors affecting wound healing (M-04, W-18)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Factors delaying wound healing (M-10, W-12, A-87)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Keloid — definition, types, treatment (M-03, O-84,86,92,93,96,99, A90)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Phases of normal wound healing (S-18)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Classification of wounds (W-21)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Difference between primary and secondary wound healing (A-77)</span></div>
+    <div class="saq-item"><span class="saq-num">7</span><span>Contused lacerated wound (O-93, A-95)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 4 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch4">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 04</span>
+    <span class="chapter-title">Basic Surgical Skills and Anastomoses</span>
+  </div>
+
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Which of the following is NOT an Oro-Gastric tube?</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">T-Tube — T-tube is a biliary drain placed in the common bile duct after choledochotomy — NOT an oro-gastric tube. Ryle's tube, Levine's tube, and Sengstaken-Blakemore tube all pass through the mouth/nose into the GI tract.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Which suture material should be used to suture a wound in a road traffic accident?</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Nylon (Prolene/monofilament nylon) — Non-absorbable monofilament nylon is ideal for contaminated/traumatic wounds. It has low tissue reactivity, resists infection, and can be removed later. Silk and catgut have high reactivity and are unsuitable in contaminated wounds.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Following is an absorbable suture material</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Catgut — Catgut (plain and chromic) is a natural absorbable suture made from sheep/cattle intestine submucosa. Silk, prolene, and nylon are all NON-absorbable.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Which suture material has high tissue reaction?</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Chromic catgut — Among the options, chromic catgut has the highest tissue reaction (it's a natural biological material). PDS and polypropylene are synthetic with minimal reaction. Plain catgut also reacts but chromic more so.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Non-absorbable skin sutures from the scalp are removed in _____ days</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">7 days — Scalp sutures: 7 days. Face: 3–5 days. Trunk/extremity: 7–10 days. Feet: 10–14 days. Scalp sutures are removed at 7 days to avoid suture marks.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">All the following are absorbable sutures EXCEPT</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Polypropylene (Prolene) — Polypropylene is NON-absorbable. Absorbable sutures: PDS (polydioxanone), Polygalactin (Vicryl), Catgut, Polyglycolic acid (Dexon).</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ — Short Answer Questions (Topics to Know)</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Ideal suture material (S-20)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Absorbable sutures (A-91,96)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Synthetic sutures (A-91,96)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Non-absorbable sutures (O-93,94)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Staples in surgery (O-92)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Abdominal incision (A-99)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 5 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch5">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 05</span>
+    <span class="chapter-title">Surgical Infection</span>
+  </div>
+
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">All of the following are true about tetanus EXCEPT</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">There is loss of consciousness — In tetanus, consciousness is PRESERVED throughout (unlike meningitis). The tetanospasmin toxin causes spastic paralysis but does NOT affect consciousness. Trismus IS the first sign; sedatives ARE used.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Hospital-acquired infections are all EXCEPT</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Streptococcus — Common nosocomial organisms: Pseudomonas, Staphylococcus aureus (MRSA), Acinetobacter, E. coli, Klebsiella. Streptococcus is primarily community-acquired.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">AIDS virus belongs to</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Retrovirus — HIV (Human Immunodeficiency Virus) is an RNA retrovirus (uses reverse transcriptase to convert RNA → DNA). It belongs to the family Retroviridae, genus Lentivirus.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Nosocomial infection means</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Hospital-acquired infection — "Nosocomial" from Greek "nosokomeion" (hospital). Infection acquired in a healthcare setting ≥48 hours after admission, or within 30 days of discharge.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Most important treatment of gas gangrene</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Wide surgical debridement or amputation — Surgical debridement/amputation is the MOST IMPORTANT treatment. Gas gangrene spreads rapidly and is fatal without surgical removal of all infected tissue. Penicillin and hyperbaric oxygen are adjuncts.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Hyperbaric oxygen is useful in treatment of</span><span class="q-year">M-10, W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Gas gangrene (Clostridial myonecrosis) — HBO₂ inhibits toxin production and kills anaerobic Clostridia by creating an oxygen-rich environment. Also used in chronic non-healing wounds, CO poisoning, and decompression sickness.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Different types of surgical dressings are</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Surgical dressings include: bead dressings, polymeric films (transparent films), hydrocolloids, fibrous polymers, hydrogels, and foams. Modern wound dressings are classified by their composition and mechanism.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Following is NOT a proper method for abscess management</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Antibiotics only if not localised — Once an abscess is localised (pointing), DRAINAGE is essential — antibiotics alone are insufficient. Antibiotics may be used as adjuncts or in early cellulitis phase before localisation.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Following are techniques of sterilization EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Cobalt pressure steam — "Cobalt pressure steam" is NOT a recognized sterilization method. Valid methods: steam under pressure (autoclave), ethylene oxide gas, formaldehyde, gamma radiation (cobalt-60 radiation IS used but NOT "cobalt pressure steam").</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Commonest organism responsible for cellulitis is from</span><span class="q-year">S-12, W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Streptococcus (Group A β-haemolytic Streptococcus pyogenes) — The most common cause of cellulitis. Staphylococcus aureus can also cause cellulitis but Streptococcus is most common.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Gas gangrene can be caused by</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Clostridium welchii (perfringens) — C. perfringens (Type A) is the most common cause (~80%) of gas gangrene/clostridial myonecrosis. Also: C. novyi, C. septicum, C. histolyticum. All produce α-toxin (lecithinase).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Ideal steam sterilization of 121°C with 15 lb/inch pressure should have hold time of</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">15 minutes — Standard autoclave: 121°C / 15 psi / 15 minutes. Flash autoclave: 134°C / 30 psi / 3 minutes. This kills all microorganisms including bacterial endospores.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Sign in a limb cellulitis that is a "sign of bad omen"</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Cuticular (skin) necrosis — Skin necrosis in cellulitis indicates progression to necrotising fasciitis or severe deep infection — a very serious sign requiring urgent surgical exploration. Tense swelling, redness, and fever are expected features.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">Best timing of giving prophylactic IV antibiotics in clean surgery</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">At the induction of anaesthesia — Current WHO and NICE guidelines recommend antibiotic prophylaxis within 60 minutes before incision, ideally at induction of anaesthesia to achieve peak tissue levels at time of incision.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Wet gangrene is characterized by all the following EXCEPT</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Mummification — Mummification is a feature of DRY gangrene (the tissue dries and shrivels). Wet gangrene features: pain, no clear line of demarcation, putrefaction, foul smell, tissue oedema.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Burst abdomen commonly occurs on</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">7th day — Burst abdomen (wound dehiscence/evisceration) most commonly occurs on the 7th–10th post-operative day. Preceded by sero-sanguineous discharge ("pink fluid"). Predisposing factors: infection, malnutrition, obesity, raised intra-abdominal pressure.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Risus sardonicus is associated with</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Tetanus — Risus sardonicus = "sardonic smile" caused by sustained contraction of facial muscles (masseter + zygomaticus). It is PATHOGNOMONIC of tetanus. Caused by tetanospasmin blocking inhibitory neurotransmitters.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Carbuncle is treated by</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Cruciate incision and deroofing — Carbuncle (deep multi-locular Staph infection) requires cruciate (cross-shaped) incision to adequately drain all locules + deroofing and curettage of necrotic tissue. Antibiotics are adjuncts.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">Commonest organism in necrotising fasciitis with toxic shock syndrome</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Streptococcus pyogenes (Group A Streptococcus) — GAS is the commonest cause of Type II necrotising fasciitis with toxic shock syndrome (via superantigens). Type I is polymicrobial (synergistic).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Synergistic spreading gangrene of abdominal wall is otherwise known as</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Meleney's synergistic hospital gangrene — Meleney's gangrene = progressive bacterial synergistic gangrene of the abdominal wall, caused by microaerophilic Streptococcus + S. aureus working together. Distinct from Fournier's (scrotal/perineal).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Cellulitis is most commonly caused by</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Streptococci (Group A β-haemolytic Streptococcus pyogenes) — Consistent with Q10. Streptococcus is the leading cause of cellulitis worldwide.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">30-year-old man, clean wound without laceration, TT vaccination 10 years ago. Tetanus prophylaxis advice?</span><span class="q-year">PG Entrance 2020</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Single dose of TT — The patient was vaccinated 10 years ago (i.e., immunity may have waned but basic course was complete). For a clean wound with previous vaccination &gt;5 years ago → give a TT booster (single dose). TIG (immunoglobulin) is NOT needed for clean wounds.</span></div>
+      <div class="note">Tetanus prophylaxis rule: Clean wounds + vaccinated &gt;5 years = TT booster. Dirty wounds + no/unknown vaccination = TT + TIG.</div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ — Short Answer Questions (Topics to Know)</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Life cycle of Echinococcus Granulosus (M-07)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Causes of gangrene and difference between dry and wet gangrene (M-07)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Dry gangrene (N-07)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Gas gangrene — clinical features (M-09)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Universal precautions in HIV infection (N-10)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Gas gangrene (W-12)(A-92)</span></div>
+    <div class="saq-item"><span class="saq-num">7</span><span>Causes of surgical site infection (S-17)</span></div>
+    <div class="saq-item"><span class="saq-num">8</span><span>Tetanus (A-71) / Post-operative tetanus (O-70)</span></div>
+    <div class="saq-item"><span class="saq-num">9</span><span>Carbuncle (O86,89,93,99, A97, N06)</span></div>
+    <div class="saq-item"><span class="saq-num">10</span><span>Methods of sterilization in surgery (O-88) / Physical methods (A-87) / Chemical methods (O-98)</span></div>
+    <div class="saq-item"><span class="saq-num">11</span><span>Hyperbaric oxygen (O-79,85,86)</span></div>
+    <div class="saq-item"><span class="saq-num">12</span><span>Gram-negative septicaemia (A-85)</span></div>
+    <div class="saq-item"><span class="saq-num">13</span><span>Cross infections (A-94)</span></div>
+  </div>
+
+  <div class="section-label">LAQ — Long Answer Questions (Key Topics)</div>
+  <div class="saq-section laq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Describe risk factors for surgical wound infection. Describe various methods to minimise wound sepsis. (O-02)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Describe aetiology, pathology, and treatment of Gas Gangrene. (N-06)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Define gangrene, types, clinical features and management of TAO. (M-08)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Define gangrene, discuss etiology/clinical features/diagnosis/management of gas gangrene of lower limb. (W-16)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Describe the sign, symptoms, prevention &amp; treatment of tetanus. (O-73)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Describe the various causes of post-operative fever and its treatment. (A-79,84)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 6 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch6">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 06</span>
+    <span class="chapter-title">Surgery in the Tropics</span>
+  </div>
+  <div class="section-label">MCQ — Partial (PDF cut off)</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Following are primary sources of tuberculous infection EXCEPT</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Direct spread to lungs — The answer visible in the PDF. Primary sources of TB include: bovine (milk), human (droplet). "Direct spread to the lungs" is not a primary source but a manifestation. <i>(Full question/options were cut off in the PDF — partial answer based on available text.)</i></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  <strong>📋 Note on SAQ / LAQ Questions</strong><br><br>
+  The SAQ and LAQ items listed above are the <em>question topics</em> as found in the question bank — they require written answers. If you need model answers for any specific SAQ or LAQ topic, feel free to ask and I'll provide a structured answer for that topic.<br><br>
+  <span style="color: var(--warn);">⚠️ All answers are based on standard surgical textbooks (Bailey &amp; Love, Das, ATLS). Where the book's answer key and clinical knowledge differ, both are noted. Always cross-reference with your recommended textbook.</span>
+</div>
+
+
+<div class="navigation-bar" style="display: flex; justify-content: space-between; max-width: 900px; margin: 2rem auto; padding: 1.5rem; border-top: 2px solid #e5e7eb; font-family: 'Inter', system-ui, sans-serif;">
+  <div style="width: 150px;"></div>
+  <a href="index.html" style="padding: 0.75rem 1.5rem; background-color: #f3f4f6; color: #111827; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s;">🏠 Home List</a>
+  <a href="MBBS_Surgery_MCQ_Answers_Part2.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">Next Part ➡️</a>
+</div>
+
+</body>
+</html>
