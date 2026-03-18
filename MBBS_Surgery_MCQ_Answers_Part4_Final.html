@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>III MBBS Part-II · Surgery MCQ Answer Key — Part 4 </title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap');
+  :root {
+    --bg: #0d1117; --card: #161b22; --border: #21262d;
+    --accent: #c77dff; --accent2: #e0aaff; --warn: #ef476f;
+    --text: #e6edf3; --muted: #8b949e;
+    --correct: #1a4731; --correct-text: #3fb950;
+    --chapter-header: #1c2128;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.6; padding: 2rem 1rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding: 3rem 1rem 2.5rem; background: linear-gradient(135deg, #0d1117 0%, #110a1f 60%, #0d0817 100%); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(199,125,255,0.06) 0%, transparent 70%); pointer-events: none; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); }
+  .hero .subtitle { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+  .badge { display: inline-block; background: rgba(199,125,255,0.12); border: 1px solid rgba(199,125,255,0.3); color: var(--accent); padding: 0.25rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+  .toc { max-width: 860px; margin: 0 auto 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; }
+  .toc h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 1rem; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.5rem; }
+  .toc a { color: var(--accent); text-decoration: none; font-size: 0.9rem; padding: 0.3rem 0; border-bottom: 1px dashed rgba(199,125,255,0.2); transition: color 0.2s; }
+  .toc a:hover { color: var(--accent2); }
+  .chapter { max-width: 860px; margin: 0 auto 2.5rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .chapter-header { background: var(--chapter-header); border-bottom: 2px solid var(--accent); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .chapter-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); background: rgba(199,125,255,0.1); border: 1px solid rgba(199,125,255,0.3); padding: 0.2rem 0.6rem; border-radius: 6px; white-space: nowrap; }
+  .chapter-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--text); }
+  .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--accent2); padding: 0.8rem 1.5rem 0.3rem; background: var(--card); border-bottom: 1px solid var(--border); }
+  .mcq-list { background: var(--card); }
+  .mcq-item { border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; transition: background 0.15s; }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-item:hover { background: rgba(255,255,255,0.02); }
+  .q-row { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.5rem; }
+  .q-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 28px; padding-top: 2px; }
+  .q-text { font-size: 0.92rem; color: var(--text); flex: 1; }
+  .q-year { font-size: 0.75rem; color: var(--warn); font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding-top: 2px; }
+  .answer-row { margin-left: 40px; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .ans-badge { background: var(--correct); border: 1px solid var(--correct-text); color: var(--correct-text); padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+  .ans-text { font-size: 0.88rem; color: #cdd9e5; padding-top: 2px; }
+  .note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-left: 40px; margin-top: 0.25rem; }
+  .saq-section { background: var(--card); padding: 1rem 1.5rem; }
+  .saq-item { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #cdd9e5; display: flex; gap: 0.75rem; }
+  .saq-item:last-child { border-bottom: none; }
+  .saq-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 24px; padding-top: 2px; }
+  .footer-note { max-width: 860px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.82rem; padding: 2rem; background: var(--card); border-radius: 10px; border: 1px solid var(--border); }
+  .grand-box { background: rgba(199,125,255,0.08); border: 1px solid rgba(199,125,255,0.3); border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; }
+  .grand-box h2 { color: var(--accent2); font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.8rem; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.8rem; }
+  .stat { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.85rem; }
+  .stat strong { color: var(--accent); display: block; font-size: 1.2rem; }
+  .cheatsheet { text-align: left; }
+  .cheatsheet h3 { color: var(--accent2); margin: 1rem 0 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+  .cheatsheet ul { list-style: none; }
+  .cheatsheet li { padding: 0.25rem 0; font-size: 0.83rem; border-bottom: 1px solid var(--border); }
+  .cheatsheet li:last-child { border: none; }
+  .cheatsheet li::before { content: "→ "; color: var(--accent); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Unique Publications · MUHS — Part 4 · Final</div>
+  <h1>III<sup>rd</sup> M.B.B.S. Part-II</h1>
+  <p class="subtitle">Ch. 30 (contd.) → Ch. 42 · Burns, Plastic Surgery, Disaster, Orthopaedics &amp; Skin</p>
+</div>
+
+<div class="toc">
+  <h2>Chapters in This File</h2>
+  <div class="toc-grid">
+    <a href="#ch30b">30. Burns (Continued)</a>
+    <a href="#ch31">31. Plastic &amp; Reconstructive Surgery</a>
+    <a href="#ch32">32. Disaster Surgery</a>
+    <a href="#ch33">33. Musculoskeletal History &amp; Examination</a>
+    <a href="#ch35">35. The Spine</a>
+    <a href="#ch36">36. Upper Limb</a>
+    <a href="#ch38">38. Foot and Ankle</a>
+    <a href="#ch40">40. Infection of Bones &amp; Joints</a>
+    <a href="#ch42">42. Skin and Subcutaneous Tissue</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 30 continued -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch30b">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 30</span>
+    <span class="chapter-title">Burns (Continued)</span>
+  </div>
+  <div class="section-label">MCQ — Continued</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Feature of deep partial thickness burns is</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Reduced sensations — Deep partial-thickness (deep dermal) burns destroy most of the dermis including deep nerve endings → markedly REDUCED but not absent sensation (unlike full-thickness which is completely anaesthetic). Features: pale/mottled, reduced blanching, reduced pain to pinprick, blisters may be absent.</span></div>
+      <div class="note">Classification: Superficial (1st) = erythema only. Superficial partial (2nd superficial) = blisters, pink, moist, painful. Deep partial (2nd deep) = pale, reduced sensation. Full thickness (3rd) = white/charred, painless, leathery.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Most commonly used IV fluid in adult burns patient is</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Ringer's Lactate — RL (Hartmann's solution) is the standard IV fluid for burn resuscitation (Parkland formula). It is isotonic, balanced, and closest to plasma composition. Normal saline in large volumes causes hyperchloraemic acidosis. Dextrose solutions do not replace protein/electrolyte losses.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">According to Rule of Nine, burns of the perineum are</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">1% — The perineum/genitalia = 1% BSA in the Rule of Nines (Wallace). This makes the total 100%: Head 9% + each arm 9% (×2=18%) + anterior trunk 18% + posterior trunk 18% + each leg 18% (×2=36%) + perineum 1% = 100%.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Which of the following is NOT seen in 3rd degree burns?</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Extremely painful — 3rd degree (full-thickness) burns DESTROY all nerve endings → completely PAINLESS/ANAESTHETIC. This is a critical clinical point — pain is ABSENT, not increased. Features that ARE seen: loss of skin appendages (hair follicles, sweat glands), no vesicles/blisters, leathery/waxy/charred/white appearance.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">Most common cause of death in burns is</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Septicaemic shock — Overall (combining early + late), SEPSIS/septicaemia is the most common cause of death in burns. Early (&lt;48h): hypovolaemic shock. Late (&gt;48h): sepsis from wound infection (Pseudomonas, MRSA, fungi). Since sepsis kills more patients overall, it is cited as the leading cause of death in burns.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Deep skin burns are treated with</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Split thickness skin grafts — Deep burns (deep partial and full thickness) requiring skin grafting are covered with SPLIT-THICKNESS skin grafts (Thiersch grafts), not full-thickness grafts. STSG harvest a large area, can be meshed to expand coverage, and leave a donor site that heals spontaneously.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Parkland's formula for fluids in burn management is</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">TBSA% burns × wt in kg × 4 — Parkland formula: 4 mL × weight (kg) × %TBSA burned = total Ringer's Lactate in first 24 hours. Half in first 8 hours (from time of burn), half in next 16 hours. This is the most important burns formula to memorize.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 31 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch31">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 31</span>
+    <span class="chapter-title">Plastic and Reconstructive Surgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Graft taken from another individual of the same species is</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Allograft (Homograft) — Graft terminology: Autograft = same individual (own tissue), Isograft = genetically identical individual (identical twin), Allograft/Homograft = same species different individual, Xenograft/Heterograft = different species (e.g., porcine skin). Allografts are temporary biological dressings for burns.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Partial thickness graft is NOT taken up on following</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Exposed bone (without periosteum) — Split-thickness skin grafts will NOT survive on bare bone (without periosteum), bare cartilage (without perichondrium), bare tendon (without paratenon), and irradiated tissue. They DO take on muscle, granulation tissue, fascia, fat, and periosteum-covered bone.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Wolfe's graft is a type of skin graft which is</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Full thickness (graft) — Wolfe-Krause graft = FULL THICKNESS skin graft (FTSG): includes epidermis + entire dermis. Gives better cosmetic result, less contracture, used on face/hands. Donor site must be closed directly (limited donor area). Named after John Wolfe &amp; Fedor Krause.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Who said "Skin is the best dressing"?</span><span class="q-year">N-10, W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Joseph Lister — Joseph Lister (pioneer of antiseptic surgery) coined the phrase "Skin is the best dressing." This underlies the principle of early skin cover for wounds/burns. The book also lists this as Q9 with "Skin" as the answer — both refer to the same concept.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Within 48 hours of skin grafting, the graft survives due to</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Plasma inhibition (imbibition) — In the first 24–48 hours, the skin graft survives by PLASMATIC IMBIBITION — passive absorption of nutrients (plasma, tissue fluid) from the wound bed by capillary action/osmosis. Neovascularization (inosculation and capillary ingrowth) begins at 48–72 hours and establishes blood supply by day 5–7.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Split skin graft consists of</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Epidermis and variable amount of dermis — Split-thickness skin graft (STSG/Thiersch graft) = epidermis + a VARIABLE portion of dermis (thin, intermediate, or thick depending on depth harvested). Full-thickness = epidermis + entire dermis. Epidermis alone = not a practical graft.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Split skin graft can be applied over</span><span class="q-year">S-13, S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Muscle — STSG takes well on: muscle (with fascia), granulation tissue, fat, periosteum, perichondrium. STSG does NOT take on: bare bone (no periosteum), bare cartilage (no perichondrium), bare tendon (no paratenon), irradiated tissue, infected wounds.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Wolf's graft is</span><span class="q-year">S-13, S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Full thickness graft — Repeat of Q3. Wolfe graft = full thickness skin graft. Used for: face, eyelids, hands, fingers, areas needing minimal contracture and good cosmesis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">........... is the best dressing</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Skin — "Skin is the best dressing" — Joseph Lister's principle. The body's own skin provides the ideal barrier: controls evaporative loss, prevents infection, provides mechanical protection, and promotes healing. This underpins the importance of early wound cover.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Abbé-Estlander flap is used in the reconstruction of</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Lip — The Abbé-Estlander flap is a full-thickness lip-switch flap used for LIP reconstruction. It transfers tissue from one lip to the other (upper to lower or vice versa) based on a labial artery pedicle. Used when &gt;1/3 of lip is lost due to trauma or tumour resection.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Split skin graft for first 48 hrs survives on</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Plasma imbibition — Repeat of Q5. First 24–48 hours = plasmatic imbibition (passive diffusion of nutrients). Day 2–5 = inosculation (alignment of graft and host capillaries). Day 5 onwards = true neovascularisation/revascularisation establishes blood flow.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Key Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Partial vs full thickness skin graft — differences (M-04,06)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Types of flaps in reconstructive surgery (S-15) / Myocutaneous flaps (O-94)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Skin grafting — indications, types, technique (W-16,19)(S-17,21)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Pedicle graft (O-88, A-93)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 32 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch32">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 32</span>
+    <span class="chapter-title">Disaster Surgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Hyperbaric oxygen is useful in treatment of</span><span class="q-year">M-10, W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Gas gangrene — HBO₂ kills anaerobic Clostridia by creating a hyperoxic environment, inhibits toxin production, and promotes phagocytosis. Also used in: CO poisoning, decompression sickness, chronic non-healing wounds, frostbite (adjunct). This is a repeat question from Ch. 5.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">In triage, Red colour label indicates the case requiring</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Immediate medical help — MASS CASUALTY TRIAGE colour coding: RED = Immediate (life-threatening but salvageable — highest priority), YELLOW = Delayed (serious but stable), GREEN = Minor (walking wounded), BLACK = Expectant/Dead (unsurvivable or already dead). Red tag = treat FIRST.</span></div>
+      <div class="note">Mnemonic: "RED = Rapid, treat immediately. BLACK = Beyond help."</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Gas gangrene can be caused by</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Clostridium welchii (perfringens) — C. perfringens Type A is the most common cause (~80%). Other species: C. novyi, C. septicum, C. histolyticum, C. sordellii. All are anaerobic gram-positive spore-forming bacilli. "All of above" (option d) is also shown in the book — but the primary/most important organism is C. perfringens/welchii.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Alkalization of urine is indicated in</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Crush syndrome — Crush syndrome (traumatic rhabdomyolysis) → massive release of myoglobin → myoglobinuria → acute renal failure. Alkalising the urine (with IV sodium bicarbonate) prevents precipitation of myoglobin casts in renal tubules (myoglobin is more soluble in alkaline urine), protecting kidneys. Also: aggressive IV fluid, forced diuresis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Blast pressure wave stress injuries to organs EXCEPT</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Bone — Primary blast injury (from overpressure wave) damages AIR-CONTAINING organs preferentially: ear (tympanic membrane rupture — most sensitive), lungs (pulmonary barotrauma/blast lung), GIT (bowel perforation). SOLID organs like bone are relatively protected from primary blast wave (they are injured by secondary/tertiary blast mechanisms).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Commonest organ injured in blast injury is</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Lung — The LUNG is the most commonly injured organ in blast injury (blast lung syndrome = bilateral pulmonary contusion + haemorrhage). The ear (tympanic membrane) is the most SENSITIVE organ, but lung injury is the most COMMON organ injury in blast casualties.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">'Limb salvage' primarily depends on</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Vascular injury — Vascular integrity is the PRIMARY determinant of limb salvage in trauma. Even with severe bone, nerve, or skin injuries, a limb can potentially be salvaged if vascular supply is restored. Prolonged ischaemia (&gt;6 hours) leads to irreversible muscle death → amputation. Vascular repair takes priority in mangled extremity.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">All prone for injury in explosive blast wave EXCEPT</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Liver — Liver is a solid organ and relatively resistant to PRIMARY blast injury. Organs most vulnerable to blast overpressure: tympanic membrane (most sensitive), lungs, GIT (hollow organs), and sinuses. Secondary blast (fragments) and tertiary blast (being thrown) cause injury to all organs including solid ones.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 33 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch33">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 33</span>
+    <span class="chapter-title">History Taking &amp; Clinical Examination — Musculoskeletal</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Winging of scapula indicates injury to which nerve?</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Long thoracic nerve (of Bell) — The long thoracic nerve (C5,6,7) innervates the serratus anterior muscle, which holds the scapula against the chest wall. Injury (e.g., axillary surgery, chest wall injury) → serratus anterior paralysis → WINGING of scapula (medial border of scapula protrudes when pushing against wall).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">In tennis elbow the pain is localised near</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">The lateral epicondyle of humerus — Tennis elbow (lateral epicondylitis) = enthesopathy at the LATERAL epicondyle (common extensor origin, particularly ECRB). Pain on resisted wrist extension, gripping. Golfer's elbow = MEDIAL epicondyle (common flexor origin). "Tennis = Lateral" — both start with consonants.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Allen test assesses</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Integrity of palmar arch — Allen's test assesses the patency of the radial and ulnar arteries and their contribution to the PALMAR ARCH (superficial and deep). Both arteries compressed → hand blanches → release one → hand flushes if that artery contributes adequately. Essential before radial artery cannulation/harvest to ensure ulnar artery can perfuse the hand alone.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 35 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch35">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 35</span>
+    <span class="chapter-title">The Spine</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Most common type of spina bifida is</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Myelomeningocele — Myelomeningocele (spina bifida cystica with neural tissue herniation) is the most CLINICALLY SIGNIFICANT and most commonly diagnosed type. However, Spina bifida occulta is actually the most COMMON overall (hidden, asymptomatic, found incidentally). The book marks myelomeningocele — follow this for MUHS exam as it is the most common SYMPTOMATIC type.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 36 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch36">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 36</span>
+    <span class="chapter-title">Upper Limb — Pathology, Assessment and Management</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Treatment of hand infections includes EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Delayed mobilization — Delayed mobilization is WRONG in hand infections — it leads to stiffness, adhesions, and poor functional outcome. EARLY mobilization (as soon as infection controlled) is essential to prevent hand stiffness. Treatment principles: incision and drainage, antibiotics, elevation, and EARLY MOBILIZATION.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Felon is the accumulation of pus</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">In pulp space — Felon = infection/abscess of the FINGERTIP PULP SPACE (distal closed space). Very painful due to tight fibrous septa. Can cause pressure necrosis of distal phalanx. Paronychia = beside nail fold. Tenosynovitis = tendon sheath. Web space abscess = web space.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Dupuytren's contracture is associated with all EXCEPT</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Diabetics — Dupuytren's contracture (fibroproliferative disease of palmar fascia → ring &amp; little finger flexion) is associated with: Cirrhosis/alcoholism, Epileptics on phenytoin (sodium hydantoin), Peyronie's disease (penile fibromatosis), trauma, family history, Northern European males. Diabetes is NOT a classic association (unlike Dupuytren's contracture of the foot/Ledderhose disease).</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 38 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch38">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 38</span>
+    <span class="chapter-title">Foot and Ankle</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Some common causes of leg ulcers are all EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Portal hypertension — Common causes of leg ulcers: Venous disease (70% — varicose veins, post-thrombotic syndrome), Arterial disease (ischaemic), Diabetes (neuropathic/ischaemic), Trauma, Infection, Malignancy (Marjolin's). Portal hypertension causes oesophageal varices, ascites, caput medusae — NOT leg ulcers.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 40 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch40">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 40</span>
+    <span class="chapter-title">Infection of Bones and Joints</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">The commonest ulcer to become a malignant (Marjolin's) ulcer is</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Venous ulcer — Marjolin's ulcer = malignant transformation (usually squamous cell carcinoma) occurring in a CHRONIC SCAR or chronic ulcer. The most common precursor is a VENOUS (varicose/stasis) ulcer, followed by burn scars, osteomyelitic sinuses, and pressure sores. The transformation is insidious and painless (due to scar anaesthesia).</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 42 — SKIN (Large Chapter) -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch42">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 42</span>
+    <span class="chapter-title">Skin and Subcutaneous Tissue</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions (57 Questions)</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Strawberry angioma in a child is best treated by</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Masterly inactivity (watchful waiting) — Strawberry haemangioma (infantile haemangioma) appears at 1–4 weeks, grows for ~6–9 months, then SPONTANEOUSLY INVOLUTES in &gt;90% of cases by age 7–9 years. Treatment: observe first. Intervention only if: amblyopia (periorbital), airway compromise, ulceration, or failure to involute. Propranolol is now first-line when treatment IS needed.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Which malignancy is associated with immunosuppression?</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Kaposi's sarcoma — KS (caused by HHV-8) classically occurs in immunocompromised patients: AIDS, transplant recipients on immunosuppression. It is an AIDS-defining illness. Appears as painless purplish skin nodules/patches. Epidemic KS (AIDS-related) is the most aggressive form.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Ingrowing toe nail is a type of</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Degenerative process — Ingrowing toenail (onychocryptosis) is classified as a degenerative condition (not congenital, neoplastic, or foreign body). It is caused by improper nail cutting, tight footwear, or nail deformity, leading to nail edge penetrating surrounding soft tissue with inflammatory reaction.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Plexiform neurofibromatosis affects more commonly</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Peripheral nerve — Repeat from Ch. 9. Plexiform neurofibromas involve peripheral nerve plexuses diffusely ("bag of worms"). Pathognomonic of NF-1 (von Recklinghausen's disease).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">The edge of a basal cell carcinoma is</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">None of the above (i.e., Rolled/Pearly edge) — BCC has a characteristic ROLLED, PEARLY/BEADED edge (everted rolled edge with telangiectasia). NOT sloping (healing ulcer), NOT everted (carcinoma/SCC/Marjolin's), NOT undermined (tuberculous/rodent ulcer edge is actually rolled). The correct term not listed as an option is "rolled" or "pearly rolled."</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Plexiform neurofibromatosis commonly affects following cranial nerve</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">5th Trigeminal — Repeat from Ch. 9. Among cranial nerves, CN V (trigeminal) is most commonly affected by plexiform neurofibroma in NF-1, causing facial disfigurement.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Sebaceous cyst CANNOT occur in</span><span class="q-year">N-03, S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Soles and palms — Sebaceous cysts (epidermoid/pilar cysts) arise from sebaceous glands or blocked hair follicles. They CANNOT occur on soles and palms because these areas have NO HAIR FOLLICLES and NO SEBACEOUS GLANDS. Sebaceous cysts commonly occur on: scalp, face, neck, back, scrotum, behind ears.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Ulcer is defined as</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Breach in continuity of epithelium — An ulcer is a CIRCUMSCRIBED BREACH/LOSS of an epithelial surface (skin or mucosa) that fails to heal by primary intention. Key: breach in epithelial continuity with loss of substance. A wound = breach in surface. A sinus = blind-ending tract. A fistula = abnormal connection between two epithelial surfaces.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Treatment of primary malignant melanoma of skin is</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Wide excision — Primary treatment of cutaneous melanoma is WIDE LOCAL EXCISION with adequate margins (based on Breslow thickness): &lt;1mm → 1cm margin, 1–2mm → 1–2cm, &gt;2mm → 2cm. Radiotherapy and chemotherapy have limited roles. Immunotherapy (pembrolizumab, ipilimumab) is for metastatic disease.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">Increased exposure to ultraviolet light causes</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Basal cell carcinoma — UV radiation (UVB 290–320 nm primarily) is the most important risk factor for BCC. BCC is the most common skin cancer and most common cancer overall in fair-skinned individuals. UV causes p53 mutations and patched gene (PTCH1) mutations. SCC is also UV-related but BCC is most strongly linked.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Glomus tumour is</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Angiomyoneuroma — Glomus tumour = benign tumour of the glomus body (neuromyoarterial apparatus — a specialized AV anastomosis for temperature regulation). Histologically = angiomyoneuroma (vascular + smooth muscle + nerve elements). Classic presentation: SUBUNGUAL (under fingernail), EXQUISITELY PAINFUL, point tenderness, cold sensitivity. Tiny (few mm), treated by excision.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">The baby is normal at birth in which type of haemangioma?</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Strawberry haemangioma — Strawberry haemangioma (infantile haemangioma) is NOT present at birth — it appears at 1–4 weeks (baby is NORMAL at birth), grows rapidly for 6–12 months, then involutes. Port-wine stain, salmon patch, venous angioma are ALL present at birth.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Commonest soft tissue tumour is</span><span class="q-year">M-04, S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Lipoma — Lipoma is the most common benign soft tissue tumour overall, arising from mature adipocytes. It is the most common subcutaneous soft tissue tumour. Soft, lobulated, mobile, non-tender, compressible. Sites: back, neck, shoulder, abdominal wall. Multiple lipomas = Dercum's disease (painful), Madelung's disease (multiple symmetric).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q14</span><span class="q-text">Carcinoma which develops in a scar is</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Marjolin's ulcer — Marjolin's ulcer = malignant transformation (usually SCC) arising in a chronic scar, chronic ulcer, or burn scar. Features: painless (scar is anaesthetic), no regional lymph node metastasis (scar has no lymphatics initially), late presentation, aggressive behaviour when metastasis does occur. Named after Jean-Nicolas Marjolin.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q15</span><span class="q-text">Commonest soft tissue tumour in AIDS is</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Lymphoma — Non-Hodgkin's lymphoma is the commonest soft tissue/systemic tumour in AIDS. (Kaposi's sarcoma is the commonest skin tumour in AIDS, but lymphoma predominates among soft tissue tumours.)</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q16</span><span class="q-text">Lymphatic spread is NOT seen in</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Basal cell carcinoma — BCC (Rodent ulcer) is locally invasive but ALMOST NEVER metastasises — no lymphatic or haematogenous spread in routine cases (&lt;0.1% metastasis rate). This makes it the least aggressive of all skin malignancies despite local destruction. SCC, melanoma, and adenocarcinoma all spread via lymphatics.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q17</span><span class="q-text">Tear ulcer is also called as</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Rodent ulcer — Rodent ulcer = BCC (basal cell carcinoma). Called "rodent" because it slowly gnaws/erodes surrounding tissue like a rodent. The EDGE is characteristically rolled and pearly. Commonest site: face (around nose, inner canthus, nasolabial fold). "Tear ulcer" = Rodent ulcer = BCC.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q18</span><span class="q-text">Drug of choice in isolated limb perfusion in melanoma</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Melphalan — Isolated limb perfusion (ILP) with hyperthermic Melphalan is the gold standard for in-transit melanoma of the limb. Melphalan (an alkylating agent) is perfused at high concentration directly into the limb (isolated from systemic circulation) with hyperthermia (39–41°C), achieving very high tumour drug concentrations with minimal systemic toxicity.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q19</span><span class="q-text">Carbuncle is the name given to</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Infective gangrene of subcutaneous tissue — Carbuncle = deep, multi-locular Staphylococcal infection involving hair follicles + surrounding subcutaneous tissue = infective gangrene of subcutaneous tissue with multiple discharging sinuses. Larger and deeper than furuncle (boil). Common sites: nape of neck, upper back. Treatment: cruciate incision + deroofing + antibiotics.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q20</span><span class="q-text">Kaposi's sarcoma is a frequent manifestation in</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">AIDS — Kaposi's sarcoma (caused by HHV-8) is an AIDS-defining illness and the most common malignancy in HIV/AIDS. Presents as painless, purplish, multifocal skin lesions + visceral involvement. Epidemic (AIDS-related) KS responds to HAART.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q21</span><span class="q-text">Ultraviolet light is a carcinogen affecting</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Skin — UV radiation (UVA + UVB) is the primary carcinogen for SKIN cancers: BCC, SCC, and melanoma. UVB causes direct DNA damage (pyrimidine dimers, p53 mutations). UVA causes indirect oxidative damage. Skin is the target organ for UV carcinogenesis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q22</span><span class="q-text">Absence of pain in ulcer is suggestive of</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Neuropathic ulcer — Painless ulcer = NEUROPATHIC (sensory loss). Diabetic foot ulcers, leprosy, tabes dorsalis, syringomyelia. Arterial ulcers = painful. Venous ulcers = mild ache/heaviness. Marjolin's ulcer = painless (scar anaesthesia). The most classic painless ulcer = neuropathic/trophic ulcer.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q23</span><span class="q-text">A boil is due to staphylococcal infection of the</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hair follicle — A boil (furuncle) = acute staphylococcal infection of a hair follicle and its surrounding tissue. Begins as folliculitis → progresses to a tender, inflamed, pus-filled nodule → spontaneous discharge. Carbuncle = multiple coalescing furuncles. Hydradenitis suppurativa = sweat gland infection.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q24</span><span class="q-text">Which lipomas are likely to undergo malignant change?</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Retroperitoneal lipoma — Deep-seated lipomas (retroperitoneal, intramuscular) are more likely to undergo malignant transformation to liposarcoma than superficial (subcutaneous) ones. Retroperitoneal liposarcoma is the most common retroperitoneal sarcoma. Any rapidly enlarging, deep, fixed lipoma should be excised and histologically examined.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q25</span><span class="q-text">Commonest malignancy in HIV patient is</span><span class="q-year">M-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Kaposi's sarcoma — KS is the most common malignancy in HIV/AIDS. It is an AIDS-defining illness caused by HHV-8. Common in MSM with HIV. Presents with violaceous skin/mucosal lesions. HAART reduces incidence dramatically.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q26</span><span class="q-text">Commonest organism responsible for cellulitis</span><span class="q-year">M-10, S-12, W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Streptococcus pyogenes (Group A beta-haemolytic Streptococcus) — Repeat. Streptococcus is the most common cause of cellulitis worldwide. Treatment: penicillin/amoxicillin (or cephalexin). MRSA cellulitis is increasingly common (treat with clindamycin/TMP-SMX/doxycycline).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q27</span><span class="q-text">Sebaceous cyst is described as a</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Distension cyst — Sebaceous (epidermoid) cysts are RETENTION/DISTENSION cysts — formed by blockage of a sebaceous gland duct or hair follicle infundibulum → keratin/sebum accumulates → cyst distends. Features: punctum (blocked duct opening), cheesy contents (keratin), horn projecting from punctum.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q28</span><span class="q-text">Hutchinson's freckle is a type of</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Melanoma (Lentigo maligna) — Hutchinson's freckle = Lentigo maligna = melanoma in situ occurring on chronically sun-damaged skin of elderly patients (face, neck). Large, flat, irregularly pigmented patch. Hutchinson's melanotic freckle → if invasive component develops = Lentigo maligna melanoma. Very slow-growing. Named after Sir Jonathan Hutchinson.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q29</span><span class="q-text">The most lethal malignancy of the skin is</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Melanoma — Malignant melanoma has the WORST prognosis of all skin cancers, despite representing only ~5% of skin malignancies. It accounts for ~75% of skin cancer deaths due to early, aggressive metastasis (lymphatic + haematogenous). BCC is most common but least lethal. SCC is intermediate.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q30</span><span class="q-text">Features of hypertrophied scar EXCEPT</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Infection promoting keloid formation — Infection promotes HYPERTROPHIC SCAR, NOT keloid formation specifically. Features of hypertrophic scar: remains WITHIN wound boundaries (unlike keloid which extends beyond), occurs in children, on flexor surfaces, after infection, and REGRESSES spontaneously (unlike keloid).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q31</span><span class="q-text">Most common site of hypertrophic scar is</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Presternal area — Hypertrophic scars AND keloids are both most common in the PRESTERNAL region, followed by deltoid, ear lobule. Note: presternal area is also the most common site for KELOID. The distinction: hypertrophic scar remains within wound, keloid extends beyond.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q32</span><span class="q-text">Cock's peculiar tumour is</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">An infected sebaceous cyst — Cock's peculiar tumour = infected/ulcerated sebaceous cyst of the SCALP that mimics a malignant tumour (fungating, foul-smelling, ulcerated appearance on the scalp). Named after Edward Cock. It is entirely BENIGN — treatment is excision after controlling infection.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q33</span><span class="q-text">Total Hip Replacement was described by</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">John Charnley — Sir John Charnley (1961) pioneered total hip arthroplasty using a metal-on-polyethylene low-friction arthroplasty (LFA) — small femoral head + UHMWPE acetabular cup + bone cement. Called "the father of modern THR." Hugh Owen Thomas = Thomas splint. Ilizarov = circular external fixator. Robert Jones = Jones bandage.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q34</span><span class="q-text">All are brilliantly transilluminant swellings EXCEPT</span><span class="q-year">W-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Dermoid cyst — Dermoid cysts are NOT brilliantly transilluminant because they contain SOLID elements (hair, teeth, sebum, epithelial debris) in addition to fluid → opaque. Brilliantly transilluminant swellings (thin-walled, fluid-only): Cystic hygroma (lymphangioma), Meningocoele (CSF), Cyst of epididymis. Hydrocele also transilluminates.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q35</span><span class="q-text">Universal tumour refers to</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Lipoma — Lipoma is called the "universal tumour" because it can occur ANYWHERE in the body where adipose tissue is found — subcutaneous, subfascial, intramuscular, retroperitoneal, mediastinal, intracranial, intraspinal. Most common benign soft tissue tumour everywhere.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q36</span><span class="q-text">Hydradenitis suppurativa: which is true?</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Abscesses and sinus tract of axillary skin — Hidradenitis suppurativa (HS) = chronic suppurative disease of apocrine sweat gland-bearing areas (axilla, groin, perianal, inframammary). Features: recurrent abscesses → sinuses → scarring → keloid. NOT to be confused with suppurative lymphadenitis (which is a lymph node infection).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q37</span><span class="q-text">Commonest tumour of the subcutaneous tissue is</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Lipoma — Repeat of Q13 and Q35. Lipoma = most common subcutaneous tumour. Soft, fluctuant, mobile, lobulated, non-tender, brilliantly transilluminant (thinly walled lipomas).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q38</span><span class="q-text">The origin of malignant melanoma is</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Ectoderm — Melanocytes are derived from NEURAL CREST cells (which originate from ECTODERM). Neural crest cells migrate to skin, uveal tract, meninges, mucosal surfaces. Hence melanoma can arise from skin (most common), eye (uveal melanoma), mucosal surfaces, and rarely meninges.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q39</span><span class="q-text">Most common type of ulcer edge seen in tuberculosis is</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Undermined (Undetermined in book = Undermined) — Tuberculous ulcer edge = UNDERMINED (overhanging edges with bluish-grey/lilac discolouration). The edge is thin, bluish, and undercut — skin hangs over the ulcer base. Other edges: Punched-out = gummatous/syphilitic/ischaemic, Sloping = healing, Everted = carcinoma, Rolled = BCC.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q40</span><span class="q-text">Metastasis is NOT common with which tumour?</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Basal cell carcinoma — BCC virtually NEVER metastasises (&lt;0.1%). It is locally aggressive but non-metastatic. SCC metastasises in ~5%. Melanoma is highly metastatic. BCC is the "malignant tumour that does not kill" (unless neglected for decades in very rare cases).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q41</span><span class="q-text">All the following is true about keloid EXCEPT</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">It does NOT extend beyond the original wound — This is FALSE about keloid. KELOID DOES extend BEYOND the original wound boundaries (unlike hypertrophic scar which stays within). Keloid features: extends beyond wound, does NOT regress, vascular, tender, itchy, recurs after excision. Type III collagen predominates.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q42</span><span class="q-text">Chronic burrowing ulcer is caused by</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Microaerophilic streptococci (Meleney's ulcer) — Meleney's chronic burrowing ulcer (progressive synergistic gangrene) is caused by MICROAEROPHILIC STREPTOCOCCI working synergistically with Staphylococcus aureus. It tunnels under skin, creating undermined, spreading necrosis. Distinct from necrotising fasciitis. Treated with wide debridement + antibiotics.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q43</span><span class="q-text">Punched out ulcer edge is most commonly seen in</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Gummatous ulcer (syphilitic) — PUNCHED-OUT edge (vertical walls, as if cut by a hole-punch) is most characteristic of: gummatous/syphilitic ulcer (tertiary syphilis). Also seen in: ischaemic/arterial ulcers, trophic/neuropathic ulcers. Tuberculosis = undermined. BCC = rolled. SCC = everted.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q44</span><span class="q-text">Melanoma staging is based on</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Both (Breslow + Clark's) — Melanoma thickness measurement: Breslow thickness (in mm from granular cell layer to deepest invasive cell) — most important prognostic factor. Clark's level (anatomical depth: I–V). Both are used together. Breslow is more reproducible and prognostically superior. TNM staging also incorporates sentinel lymph node status.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q45</span><span class="q-text">All of the following is a regressing tumour EXCEPT</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Port-wine stain (Naevus flammeus) — Port-wine stain does NOT regress — it is permanent and often darkens/thickens with age. Regressing vascular lesions: Strawberry haemangioma (involutes by age 7–9), Salmon patch (most disappear by 1 year), Juvenile/capillary angioma. Port-wine stain = capillary malformation (not haemangioma) = DOES NOT INVOLUTE.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q46</span><span class="q-text">Bowen's disease</span><span class="q-year">W-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Bowen's disease = squamous cell carcinoma IN SITU (intraepidermal SCC). Features: mimics chronic dermatosis (eczema/psoriasis-like plaque), IS premalignant (can progress to invasive SCC), presents with pruritis, erythematous well-defined scaly plaques. Associated with HPV, arsenic, UV exposure. Treatment: 5-FU cream, PDT, excision.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q47</span><span class="q-text">Type of melanoma affecting soles and palms</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Acral lentiginous melanoma — ALM occurs on ACRAL (extremity) surfaces: palms, soles, and subungual (under nails). It is the most common melanoma in dark-skinned (Asian, African) populations. Often diagnosed late (mistaken for haematoma/fungal nail). Subungual ALM: Hutchinson's sign = pigment extending onto proximal nail fold.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q48</span><span class="q-text">Melanoma can arise from all sites EXCEPT</span><span class="q-year">S-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Spleen — Melanocytes (neural crest derived) are present in: skin (most common), uveal tract/retina (eye), mucosal surfaces, meninges (leptomeninges), inner ear. The SPLEEN has no melanocytes and cannot be a primary site for melanoma. Splenic melanoma is only from metastasis, not primary.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q49</span><span class="q-text">Variety of capillary haemangioma that usually disappears before first birthday</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Salmon patch (Naevus simplex/Stork bite) — Salmon patch = flat, pink/red capillary malformation on nape of neck ("stork bite"), forehead, or eyelids. Present at birth, FADES in &gt;90% within first year. Strawberry haemangioma involutes by age 7–9 (not by 1 year). Port-wine stain never involutes.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q50</span><span class="q-text">Cutaneous SCC &gt;2cm: clearance margin during surgical excision should be</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">1 cm — For cutaneous SCC &gt;2 cm (high-risk), excision margin should be ≥1 cm. Low-risk SCC (&lt;2 cm, well-differentiated) = 4–6 mm margin. High-risk features (size &gt;2 cm, poor differentiation, depth &gt;6 mm, perineural invasion, immunosuppression) warrant wider margins.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q51</span><span class="q-text">Macroscopic variant of cutaneous melanoma with least metastatic potential</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Lentigo maligna melanoma — LMM has the BEST prognosis and least metastatic potential among melanoma subtypes. It grows along the surface (radial growth phase) for years before vertical invasion. Occurs in elderly on chronically sun-damaged skin. Nodular melanoma has the WORST prognosis (rapid vertical growth, no radial growth phase).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q52</span><span class="q-text">Commonest site of rodent ulcer is</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Face — BCC (rodent ulcer) occurs predominantly on the FACE (&gt;80%), particularly: inner canthus, nasolabial fold, alar base, periorbital region, scalp. The "H-zone" of the face (central face) is highest risk. Rare on trunk and limbs. Almost never on palms/soles.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q53</span><span class="q-text">Moh's micrographic surgery is done for</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Basal cell carcinoma — Mohs micrographic surgery (MMS) = serial horizontal sectioning with real-time frozen section margin control → complete margin analysis → highest cure rate with maximal tissue conservation. GOLD STANDARD for: recurrent BCC, high-risk BCC (H-zone face), morphoeic BCC, SCC in high-risk sites. (S-19 answer = all of above including BCC, dermatofibrosarcoma, lentigo maligna.)</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q54</span><span class="q-text">Kasai's procedure is done for</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Biliary atresia — Kasai portoenterostomy (hepatoportoenterostomy) is the initial surgical treatment for biliary atresia, performed in infants before 60–90 days of age. A Roux-en-Y loop of jejunum is anastomosed to the porta hepatis to re-establish bile flow. If Kasai fails → liver transplantation (consistent with Q9 in Ch. 8).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q55</span><span class="q-text">Cellulitis is most commonly caused by</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Streptococci — Repeat. Group A Streptococcus (Streptococcus pyogenes) is the most common cause of non-purulent cellulitis. Staphylococcus aureus causes purulent cellulitis/abscess.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q56</span><span class="q-text">Moh's micrographic surgery used for</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — MMS is used for: BCC (recurrent/high-risk), dermatofibrosarcoma protuberans (DFSP — requires wide margins, MMS reduces recurrence), lentigo maligna (for precise margin control). The technique provides 100% margin evaluation, maximizing tissue conservation.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q57</span><span class="q-text">Elderly man with long-standing mole on face, increasing in size, irregular borders. Diagnosis?</span><span class="q-year">PG 2020</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Superficial spreading melanoma — The clinical features (long-standing mole, increasing size, irregular borders, elderly patient, face) describe SUPERFICIAL SPREADING MELANOMA (SSM) — the most common melanoma type (70%). Features: asymmetry, irregular border, colour variation, diameter &gt;6mm. However, the combination of "elderly + face + long-standing" could also suggest lentigo maligna (book marks SSM). SSM has radial growth phase with characteristic border irregularity.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Key Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Keloid vs Hypertrophic scar — differences (N-04,03,08)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Pilonidal sinus (N-03) / Dermoid Cyst (N-06, W-17)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Malignant Melanoma — types, staging, management (N-06)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Carbuncle (N-06, S-12) / Lipoma (N-06)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Hamartoma (N-06) / Sebaceous cyst / Haemangioma types</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- MASTER SUMMARY -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="grand-box">
+    <h2>🏆 COMPLETE SERIES — ALL 4 PDFs ANSWERED</h2>
+    <div class="stat-grid">
+      <div class="stat"><strong>PDF 1</strong>Ch. 1–6 · ~57 MCQs</div>
+      <div class="stat"><strong>PDF 2</strong>Ch. 6–20 · ~46 MCQs</div>
+      <div class="stat"><strong>PDF 3</strong>Ch. 20–30 · ~58 MCQs</div>
+      <div class="stat"><strong>PDF 4</strong>Ch. 30–42 · ~75 MCQs</div>
+      <div class="stat"><strong style="color:#e0aaff">~236</strong>Total MCQs Answered</div>
+    </div>
+  </div>
+
+  <div class="cheatsheet">
+    <h3>🔑 Master High-Yield Cheat Sheet — Skin &amp; Subcutaneous</h3>
+    <ul>
+      <li>Rodent ulcer = BCC = Rolled pearly edge = Never metastasises = Commonest on face</li>
+      <li>Marjolin's ulcer = SCC in chronic scar/ulcer = Painless = Aggressive when metastasises</li>
+      <li>Melanoma = Most lethal skin cancer = Wide excision = Breslow + Clark's staging = SSM most common type</li>
+      <li>ALM = Palms/soles/subungual = Most common melanoma in dark skin</li>
+      <li>Lentigo maligna = Elderly + sun-damaged face = Best prognosis melanoma</li>
+      <li>Keloid = BEYOND wound + doesn't regress + presternal. Hypertrophic = WITHIN wound + regresses</li>
+      <li>Sebaceous cyst = Retention cyst = Cannot occur on palms/soles</li>
+      <li>Lipoma = Universal tumour = Most common soft tissue/subcutaneous tumour</li>
+      <li>Glomus tumour = Subungual + Exquisitely painful + Cold sensitive = Angiomyoneuroma</li>
+      <li>Strawberry haemangioma = Normal at birth, appears 1–4 weeks, involutes by age 7–9</li>
+      <li>Salmon patch = Present at birth, fades by age 1 year</li>
+      <li>Port-wine stain = Present at birth, DOES NOT involute = treat with pulsed dye laser</li>
+      <li>Bowen's disease = SCC in situ = Premalignant = mimics eczema</li>
+      <li>Mohs surgery = BCC + DFSP + lentigo maligna = 100% margin control</li>
+      <li>Dermoid cyst = NOT transilluminant (contains solid elements). Cystic hygroma = brilliantly transilluminant</li>
+    </ul>
+
+    <h3>🧠 Quick Rules for Ulcer Edges</h3>
+    <ul>
+      <li>Sloping = Healing ulcer</li>
+      <li>Undermined (bluish) = Tuberculous ulcer</li>
+      <li>Punched-out = Gummatous/syphilitic, ischaemic, neuropathic</li>
+      <li>Rolled/Pearly = BCC (Rodent ulcer)</li>
+      <li>Everted/Raised = Carcinoma (SCC, Marjolin's)</li>
+      <li>Painless ulcer = Neuropathic/trophic (diabetes, leprosy, tabes dorsalis)</li>
+    </ul>
+
+    <h3>🔬 Plastic Surgery Quick Facts</h3>
+    <ul>
+      <li>Wolfe graft = Full thickness graft (epidermis + entire dermis)</li>
+      <li>Split skin graft = Epidermis + variable dermis = Used for large areas including over muscle</li>
+      <li>STSG fails on: bare bone, bare tendon, bare cartilage, infected wound</li>
+      <li>Graft survival 0–48h = plasma imbibition. 48h–5d = inosculation. After 5d = neovascularisation</li>
+      <li>Allograft = same species. Autograft = same individual. Xenograft = different species</li>
+      <li>Abbé-Estlander flap = Lip reconstruction</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="navigation-bar" style="display: flex; justify-content: space-between; max-width: 900px; margin: 2rem auto; padding: 1.5rem; border-top: 2px solid #e5e7eb; font-family: 'Inter', system-ui, sans-serif;">
+  <a href="MBBS_Surgery_MCQ_Answers_Part3.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">⬅️ Previous Part</a>
+  <a href="index.html" style="padding: 0.75rem 1.5rem; background-color: #f3f4f6; color: #111827; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s;">🏠 Home List</a>
+  <a href="MBBS_Surgery_MCQ_Answers_Part5.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">Next Part ➡️</a>
+</div>
+
+</body>
+</html>
