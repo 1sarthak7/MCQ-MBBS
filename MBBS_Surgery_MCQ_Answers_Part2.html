@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>III MBBS Part-II · Surgery MCQ Answer Key — Part 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap');
+  :root {
+    --bg: #0d1117; --card: #161b22; --border: #21262d;
+    --accent: #00b4d8; --accent2: #06d6a0; --warn: #f77f00;
+    --text: #e6edf3; --muted: #8b949e;
+    --correct: #1a4731; --correct-text: #3fb950;
+    --chapter-header: #1c2128;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.6; padding: 2rem 1rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding: 3rem 1rem 2.5rem; background: linear-gradient(135deg, #0d1117 0%, #0a1628 60%, #061a2e 100%); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(6,214,160,0.06) 0%, transparent 70%); pointer-events: none; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent2); }
+  .hero .subtitle { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+  .badge { display: inline-block; background: rgba(6,214,160,0.12); border: 1px solid rgba(6,214,160,0.3); color: var(--accent2); padding: 0.25rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+  .toc { max-width: 860px; margin: 0 auto 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; }
+  .toc h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 1rem; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.5rem; }
+  .toc a { color: var(--accent2); text-decoration: none; font-size: 0.9rem; padding: 0.3rem 0; border-bottom: 1px dashed rgba(6,214,160,0.2); transition: color 0.2s; }
+  .toc a:hover { color: var(--accent); }
+  .chapter { max-width: 860px; margin: 0 auto 2.5rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .chapter-header { background: var(--chapter-header); border-bottom: 2px solid var(--accent2); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .chapter-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent2); background: rgba(6,214,160,0.1); border: 1px solid rgba(6,214,160,0.3); padding: 0.2rem 0.6rem; border-radius: 6px; white-space: nowrap; }
+  .chapter-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--text); }
+  .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--accent); padding: 0.8rem 1.5rem 0.3rem; background: var(--card); border-bottom: 1px solid var(--border); }
+  .mcq-list { background: var(--card); }
+  .mcq-item { border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; transition: background 0.15s; }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-item:hover { background: rgba(255,255,255,0.02); }
+  .q-row { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.5rem; }
+  .q-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 28px; padding-top: 2px; }
+  .q-text { font-size: 0.92rem; color: var(--text); flex: 1; }
+  .q-year { font-size: 0.75rem; color: var(--warn); font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding-top: 2px; }
+  .answer-row { margin-left: 40px; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .ans-badge { background: var(--correct); border: 1px solid var(--correct-text); color: var(--correct-text); padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+  .ans-text { font-size: 0.88rem; color: #cdd9e5; padding-top: 2px; }
+  .note { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-left: 40px; margin-top: 0.25rem; }
+  .saq-section { background: var(--card); padding: 1rem 1.5rem; }
+  .saq-item { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; color: #cdd9e5; display: flex; gap: 0.75rem; }
+  .saq-item:last-child { border-bottom: none; }
+  .saq-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 24px; padding-top: 2px; }
+  .none-tag { font-style: italic; color: var(--muted); font-size: 0.85rem; }
+  .footer-note { max-width: 860px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.8rem; padding: 1.5rem; background: var(--card); border-radius: 10px; border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Unique Publications · MUHS — Continued</div>
+  <h1>III<sup>rd</sup> M.B.B.S. Part-II</h1>
+  <p class="subtitle">Chapters 6 (contd.) → 20 · MCQ Answer Key with Explanations</p>
+</div>
+
+<div class="toc">
+  <h2>Chapters in This File</h2>
+  <div class="toc-grid">
+    <a href="#ch6b">6. Surgery in the Tropics (contd.)</a>
+    <a href="#ch7">7. Laparoscopic &amp; Robotic Surgery</a>
+    <a href="#ch8">8. Principles of Paediatric Surgery</a>
+    <a href="#ch9">9. Principles of Oncology</a>
+    <a href="#ch12">12. Patient Safety</a>
+    <a href="#ch13">13. Diagnostic Imaging</a>
+    <a href="#ch15">15. Tissue Diagnosis</a>
+    <a href="#ch17">17. Anaesthesia &amp; Pain Relief</a>
+    <a href="#ch19">19. Perioperative Management</a>
+    <a href="#ch20">20. Nutrition &amp; Fluid Therapy</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 6 continued -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch6b">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 06</span>
+    <span class="chapter-title">Surgery in the Tropics (Continued)</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Primary source of tuberculous infection in the first question (TB spreading by ascending infection from urethra to kidney)</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">By ascending infection from urethra to kidney — This is the answer shown in the book for the EXCEPT question. Primary TB sources include direct inhalation, bovine (milk/gut), and lymphatic/haematogenous spread. Ascending urethral spread to the kidney is actually SECONDARY renal TB, not a primary source — hence the "EXCEPT" answer.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Lepra type I reaction occurs commonly in</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Borderline leprosy — Type I (Reversal) reaction is a delayed hypersensitivity reaction (CMI-mediated) occurring in BORDERLINE leprosy (BT, BB, BL). It does NOT occur in polar forms (TT or LL). Type II (ENL) occurs in LL and BL.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Germinal layer of hydatid cyst is</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Endocyst (inner germinal layer) — Hydatid cyst has 3 layers: (1) Pericyst — host-derived fibrous layer, (2) Ectocyst — outer laminated membrane (acellular), (3) Endocyst — inner germinal (nucleated) layer that produces brood capsules, scolices, and daughter cysts.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Increased incidence of cholangiocarcinoma is seen in all EXCEPT</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Hydatid cyst of liver — Hydatid cyst does NOT increase risk of cholangiocarcinoma. Risk factors for cholangiocarcinoma: Primary sclerosing cholangitis, liver flukes (Clonorchis sinensis, Opisthorchis), choledochal cysts, hepatolithiasis, ulcerative colitis, polycystic liver disease.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Loeffler's syndrome is caused by</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Ascaris lumbricoides — Loeffler's syndrome = transient pulmonary eosinophilia caused by larval migration through the lungs. Most common cause = Ascaris lumbricoides larvae passing through the pulmonary vasculature. Also caused by hookworm, Strongyloides.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">All of the following are intermediate hosts in hydatid cyst EXCEPT</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Dogs — Dogs are the DEFINITIVE host (harbour adult tapeworm Echinococcus granulosus in their intestine). Intermediate hosts (harbour larval stage/hydatid cysts): sheep, cattle, pigs, horses, camels, and humans (accidental intermediate host).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Leonine facies is seen in which type of leprosy</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Lepromatous leprosy — Leonine facies (lion-like face) = thickening and nodulation of facial skin (forehead, cheeks, ears, nose) due to diffuse infiltration by M. leprae. Characteristic of lepromatous leprosy (low CMI, high bacterial load).</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ / LAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">—</span><span>Key SAQ topics: Cold abscess, Collar stud abscess, Ileocaecal TB, Amoeboma, Trophic ulcer, Hydatid cyst management, Leprosy surgical manifestations, Tuberculous cervical lymphadenopathy</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 7 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch7">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 07</span>
+    <span class="chapter-title">Principles of Laparoscopic and Robotic Surgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Minimally Access Surgical procedures are becoming more popular because</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — MAS advantages: less painful and disfiguring (smaller incisions), fewer complications (less wound infections, adhesions, hernias), can be performed in high-risk patients (less physiologic stress). Hence all three options are correct.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">The gas used in laparoscopic surgery to create pneumoperitoneum</span><span class="q-year">N-09, S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">CO₂ (Carbon dioxide) — CO₂ is the gas of choice for laparoscopic insufflation because: highly soluble in blood (rapidly absorbed and excreted via lungs), non-combustible (safe with electrocautery), non-toxic, cheap, and readily available.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">During laparoscopic procedure, following gas is used for insufflating peritoneal cavity</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">CO₂ — Same as Q2. CO₂ is the universal gas for laparoscopic pneumoperitoneum. O₂ and N₂O are flammable/support combustion (dangerous with diathermy).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Advantages of carbon dioxide in laparoscopic surgery are all EXCEPT</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Non-irritant — CO₂ IS irritant to the peritoneum. It dissolves in peritoneal fluid to form carbonic acid (H₂CO₃), which causes referred shoulder tip pain (phrenic nerve irritation) post-operatively. True advantages of CO₂: non-flammable, non-toxic, rapidly absorbed.</span></div>
+      <div class="note">Mnemonic for CO₂ advantages: Non-flammable, Rapidly absorbed, Inexpensive, Non-explosive. Disadvantage: IRRITANT to peritoneum.</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Gas most suited for laparoscopy is</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">CO₂ — Consistent with Q2 and Q3. CO₂ remains the gold standard gas for laparoscopic surgery worldwide.</span></div>
+    </div>
+
+  </div>
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Methods of achieving haemostasis (N-10)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Limitations of minimal access surgery (W-15)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Role of therapeutic endoscopy in surgery (O-85)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 8 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch8">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 08</span>
+    <span class="chapter-title">Principles of Paediatric Surgery</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Which statement is NOT true regarding Hirschsprung's disease?</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Rectal biopsy shows absent nerve fibres — This is actually TRUE (it's the gold standard diagnostic finding — absence of ganglion cells in Meissner's and Auerbach's plexuses). The question asks for what is NOT true. However, the statement is correctly stated, so this is a tricky question. All options (a, c, d) are true. Rectal biopsy shows ABSENT GANGLION CELLS (not absent nerve fibres per se) — nerve fibres are increased (hypertrophied cholinergic fibres). The subtle error is "absent nerve fibres" vs "absent ganglion cells."</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Duhamel operation is done for</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Hirschsprung's disease — Duhamel operation = retrorectal transanal pull-through. One of three operations for Hirschsprung's disease: (1) Swenson (original), (2) Duhamel (retrorectal), (3) Soave (endorectal pull-through). All remove the aganglionic segment.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Complications of Ramstedt's operation include</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Complications of Ramstedt's pyloromyotomy: gastroenteritis (post-op feeding problems), post-operative pyrexia, wound disruption (duodenal perforation is also feared), wound infection. All listed complications can occur.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">The most common malignant neoplasm of infancy is</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Neuroblastoma — Most common solid extracranial malignant tumour in infancy/childhood. Arises from neural crest cells (adrenal medulla, sympathetic ganglia). Presents with abdominal mass, opsoclonus-myoclonus, raccoon eyes. Elevated urinary catecholamines (VMA, HVA).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Ladd's procedure is done for</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Malrotation of gut — Ladd's procedure: (1) Division of Ladd's bands (peritoneal bands causing duodenal obstruction), (2) Widening of the mesentery, (3) Appendicectomy, (4) Placing small bowel on right and colon on left. Corrects midgut malrotation.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Ramstedt's operation is done in</span><span class="q-year">S-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Infantile Hypertrophic Pyloric Stenosis (IHPS) — Ramstedt pyloromyotomy: splitting the hypertrophied pyloric muscle longitudinally down to mucosa without entering the lumen. Pre-op: correct hypokalemic, hypochloraemic metabolic alkalosis first.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Congenital hypertrophic pyloric stenosis is associated with</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Hypokalemic alkalosis — IHPS causes non-bilious projectile vomiting → loss of HCl (H⁺ + Cl⁻) → metabolic alkalosis. Paradoxical aciduria: kidneys retain H⁺ to preserve K⁺ → hypokalaemia. Classic: hypokalemic, hypochloraemic metabolic alkalosis.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Double bubble sign is seen in</span><span class="q-year">W-15</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Duodenal atresia — Double bubble sign on AXR: two air-fluid levels — one in the stomach and one in the dilated first part of duodenum, with absence of gas distally. Classic finding of duodenal atresia. Associated with Down syndrome (30%).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Commonest indication for liver transplantation in infant is</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Biliary atresia — Biliary atresia (progressive obliteration of bile ducts) is the single most common indication for liver transplantation in children/infants, accounting for ~50% of paediatric liver transplants. Kasai portoenterostomy is initial treatment; transplant for failures.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q10</span><span class="q-text">In congenital pyloric stenosis the defect usually lies in</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Circular muscle fibre — IHPS involves hypertrophy and hyperplasia of the CIRCULAR muscle layer of the pylorus, causing a palpable "olive-shaped" mass. The longitudinal muscle is relatively unaffected. Ramstedt's pyloromyotomy splits only the circular muscle fibres.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q11</span><span class="q-text">Ramstedt's operation is for</span><span class="q-year">W-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Congenital hypertrophic pyloric stenosis — Repeat confirmation of Q6. Ramstedt = pyloromyotomy for IHPS.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q12</span><span class="q-text">Duhamel's operation is done for which condition?</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Hirschsprung's disease — Repeat of Q2. Duhamel operation = retrorectal pull-through for Hirschsprung's disease.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q13</span><span class="q-text">Acute pancreatitis causes</span><span class="q-year">S-18</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Complications of acute pancreatitis include: pancreatic necrosis (local), pleural effusion (usually left-sided, due to pancreatic duct-pleural fistula or diaphragmatic inflammation), and ascites (pancreatic ascites from ductal disruption). All three can occur.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Tracheo-oesophageal fistula (M-09)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Imperforate Anus (S-12)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Congenital Hypertrophic Pyloric Stenosis (W-12,14)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Megacolon / Hirschsprung's disease (S-14)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Intussusception (S-17) / Anomalies of vitello-intestinal duct (S-17)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Omphalocele / Exomphalos (W-18, S-21)</span></div>
+    <div class="saq-item"><span class="saq-num">7</span><span>Cleft lip (S-14) / Congenital Hydrocele (W-15)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 9 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch9">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 09</span>
+    <span class="chapter-title">Principles of Oncology</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Plexiform neurofibromatosis affects more commonly</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Peripheral nerve — Plexiform neurofibromas involve peripheral nerves along their entire length, causing a "bag of worms" sensation. Pathognomonic of NF-1 (von Recklinghausen's disease). They diffusely involve nerve plexuses and peripheral nerves.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Plexiform neurofibromatosis commonly affects following cranial nerve</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">5th Trigeminal nerve — Among cranial nerves, the trigeminal nerve (CN V) is most commonly affected by plexiform neurofibroma, causing facial disfigurement. NF-2 (bilateral acoustic neuromas) affects CN VIII, but NF-1 plexiform type preferentially involves CN V.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">The commonest soft tissue tumour in AIDS is</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Lymphoma — Non-Hodgkin's lymphoma is the commonest soft tissue/systemic tumour in AIDS. Kaposi's sarcoma (caused by HHV-8) is the most common tumour overall in AIDS (including skin), but among soft tissue tumours specifically, lymphoma predominates. <i>(Note: Some sources say Kaposi's is the most common AIDS-defining malignancy — either a or b depending on framing; book answer = b.)</i></span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Which tumour responds best to radiation?</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Well-differentiated carcinoma — Well-differentiated tumours are most radiosensitive. The Bergonié-Tribondeau law: rapidly dividing, undifferentiated cells are MORE radiosensitive. Paradoxically, well-differentiated tumours (seminoma, follicular thyroid) respond well to radiation clinically. Most radiosensitive: seminoma, lymphoma, small cell carcinoma.</span></div>
+      <div class="note">Classic radiosensitive tumours mnemonic — "6 L's": Lymphoma, Leukaemia, Liver (hepatoma), Lung (small cell), Larynx (glottis), and testicular Lesions (seminoma).</div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Type of radiation used in radiotherapy</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Ionising radiation — Radiotherapy uses ionising radiation (X-rays, gamma rays, electron beams, proton beams) to damage DNA of tumour cells, causing double-strand breaks and cell death. Non-ionising radiation (UV, infrared) does NOT have enough energy to ionise atoms.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">The gene implicated in Peutz-Jeghers syndrome is</span><span class="q-year">M-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">STK11 (LKB1) — Peutz-Jeghers syndrome: autosomal dominant, STK11/LKB1 gene mutation (serine-threonine kinase). Features: hamartomatous GI polyps + mucocutaneous pigmentation (lips, buccal mucosa, fingers). MSH1/MSH2/PMS1 are Lynch syndrome (HNPCC) genes.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Which of the following is a sign of malignant transformation of a tumour?</span><span class="q-year">S-14</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — Signs of malignant transformation: fixity to surrounding structures (local invasion), regional lymph node involvement (lymphatic spread), and distant metastasis. Any one or combination of these indicates malignancy.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Gardner's syndrome is characterised by</span><span class="q-year">S-17</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Polyposis colon + osteoma + epidermal inclusion cyst + fibrous tumour of skin — Gardner's syndrome = APC gene mutation. Triad: (1) FAP (colonic polyposis), (2) Osteomas (mandible, skull), (3) Soft tissue tumours (epidermal cysts, desmoid tumours, fibromas). High risk of colorectal cancer.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">All are recognised tumour markers EXCEPT</span><span class="q-year">W-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">None (i.e., all are recognised tumour markers) — Beta HCG (choriocarcinoma, testicular tumours), Beta-2 microglobulin (multiple myeloma, lymphoma), Alpha-fetoprotein (hepatocellular carcinoma, germ cell tumours) are ALL valid tumour markers. Hence "None" is the EXCEPT answer.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Routes of spread of malignant tumour (M-03)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Carcinoma in Situ (M-04)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Tumour markers (W-11) / Carcinoembryonic antigen (W-12)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Complications of Radiotherapy (N-10, S-21)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Neurofibromatosis (A-88,90,99) / Characteristics of malignant tumours (A-87)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Radiosensitive tumours (A-87) / Interventional Radiology (W-17)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 12 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch12">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 12</span>
+    <span class="chapter-title">Patient Safety</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Basal cell carcinoma is divided macroscopically into all EXCEPT</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Nodulocystic — BCC macroscopic types: nodular (most common, pearly edge with telangiectasia), pigmented, superficial, morphoeic/sclerosing, and fungating. "Nodulocystic" is not a standard macroscopic classification. Nodular ± cystic changes describes microscopic pattern, not a separate macroscopic type.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 13 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch13">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 13</span>
+    <span class="chapter-title">Diagnostic Imaging</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">In which patient is MRI contraindicated?</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Patient with bullet injury — Metallic foreign bodies (bullets, shrapnel) are absolute contraindications for MRI — the strong magnetic field can cause migration of ferromagnetic fragments, causing tissue injury or haemorrhage. Renal failure and unconscious patients can have MRI with precautions.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Absolute contraindication for MRI include all of the following EXCEPT</span><span class="q-year">N-10</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">1st trimester of pregnancy — Pregnancy (especially 1st trimester) is a RELATIVE contraindication, not absolute. Absolute contraindications to MRI: pacemakers, cochlear implants, metallic heart valves (older types), ferromagnetic aneurysm clips, metallic orbital foreign bodies.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Absolute contraindication of MRI is</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Cochlear implants — Cochlear implants (electronic devices with ferromagnetic components) are absolute contraindications to MRI. The magnetic field can damage the implant and cause pain/injury. Intracranial lesions, bone/joint lesions, and soft tissue lesions are actually INDICATIONS for MRI.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Which of the following is used to generate X-rays?</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Tungsten — X-ray tubes contain a tungsten target (anode). When high-speed electrons strike the tungsten target, they decelerate and produce X-rays (Bremsstrahlung radiation). Tungsten's high melting point (3422°C) and high atomic number (Z=74) make it ideal.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">One CT Abdomen is equivalent to how many chest X-rays?</span><span class="q-year">W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">500 chest X-rays — CT abdomen radiation dose ≈ 8–10 mSv, equivalent to approximately 400–500 chest X-rays (each ≈0.02 mSv). This highlights the significant radiation burden of CT scans. ALARA principle (As Low As Reasonably Achievable) should guide imaging decisions.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">FAST focuses on all the following areas EXCEPT</span><span class="q-year">W-16</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Retrocolic — FAST (Focused Assessment with Sonography for Trauma) examines 4 areas: (1) Pericardial (subxiphoid view), (2) Perihepatic/Morrison's pouch (right upper quadrant), (3) Perisplenic (left upper quadrant), (4) Pelvic (pouch of Douglas). "Retrocolic" is NOT a standard FAST window.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">FAST stands for</span><span class="q-year">S-19</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Focussed Assessment with Sonography for Trauma — Standard ATLS terminology. FAST is a bedside ultrasound exam used in trauma to detect free fluid (haemoperitoneum, haemopericardium) rapidly. Extended FAST (eFAST) also assesses bilateral pleural spaces for haemo/pneumothorax.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Endoscopic ultrasonography (N-04, W-15) / CT Scan for Head Injury (W-14)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Intravenous Urography (IVU) (M-07,11) / Interventional Radiology (N-10)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Hazard of ionising radiation during X-ray examination (S-15)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>MRI principles (W-16) / PET Scan indications in surgery (S-19)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Free gas under diaphragm (S-21, A-79) / Scout film in acute abdomen (A-79,90,92)</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Barium swallow (A-86) / Doppler Ultrasound / Digital subtraction angiography (A-2000)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 15 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch15">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 15</span>
+    <span class="chapter-title">Tissue Diagnosis</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Which one of the following is NOT a tumour marker?</span><span class="q-year">M-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Interleukin II (IL-2) — IL-2 is a cytokine (immunomodulator), NOT a tumour marker. Valid tumour markers: CEA (colorectal, pancreatic), AFP (hepatocellular carcinoma, germ cell tumours), HCG/βHCG (choriocarcinoma, testicular tumours), PSA, CA-125, CA 19-9.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Granuloma is</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Tumour-like proliferation of inflammatory tissue — A granuloma is a focal collection of epithelioid macrophages (± Langhans giant cells, lymphocytes, plasma cells) — a chronic inflammatory reaction. It is NOT a true tumour. Causes: TB, sarcoidosis, Crohn's, leprosy, foreign body.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Regarding CEA, which is FALSE?</span><span class="q-year">N-10, W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Elevated only when there is hepatic metastasis — CEA is FALSELY stated as only elevated in hepatic metastasis. In fact, CEA is elevated in primary colorectal cancer (ANY stage), pancreatic cancer, gastric cancer, lung cancer, and many benign conditions (smoking, cirrhosis). It is a prognostic marker monitored post-resection for recurrence.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Biopsy — types and indications (A-91)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>FNAC — Fine Needle Aspiration Cytology (O-90, A-92)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Frozen section biopsy (A-89) / Lymph node biopsy (A-95)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 17 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch17">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 17</span>
+    <span class="chapter-title">Anaesthesia and Pain Relief</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Maximum tourniquet time for the upper limb is</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">120 minutes — Maximum safe tourniquet time: Upper limb = 2 hours (120 min), Lower limb = 1.5 hours (90 min). Beyond this, risk of ischaemia-reperfusion injury, nerve damage, and Volkmann's contracture. Tourniquet pressure: systolic BP + 50–75 mmHg (upper limb), systolic + 75–100 mmHg (lower limb).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Local anaesthetic drugs are not effective in presence of infection because of</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Decreased pH — Infected tissues have ACIDIC pH (due to bacterial metabolism and lactic acid). Local anaesthetics (weak bases, pKa 7.6–8.9) exist in ionised form in acidic pH and CANNOT penetrate nerve membranes. The unionised lipophilic form is needed for neural penetration. Hence LA fails in abscesses.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Longest acting local anaesthetic drug is</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">Bupivacaine (Marcaine) — Duration of action: Bupivacaine 4–8 hours (longest), Lignocaine 1–2 hours, Ropivacaine 3–6 hours, Prilocaine 2–3 hours. Bupivacaine is highly protein-bound and lipophilic — hence longest acting. Cardiotoxic in overdose (treat with Intralipid).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Most common complication of spinal anaesthesia is</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Hypotension — Hypotension is the most common complication of spinal anaesthesia (incidence up to 30%), caused by sympathetic blockade → vasodilation → decreased venous return. Treatment: IV fluids, vasopressors (ephedrine, phenylephrine), lateral tilt in pregnancy. Post-dural puncture headache is common but less frequent than hypotension.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Ether is NOT used in modern surgical practice because it is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Highly explosive — Diethyl ether is extremely flammable and explosive, making it dangerous when combined with oxygen and electrocautery in modern ORs. Although it is an excellent anaesthetic agent (wide safety margin, good muscle relaxation), its explosivity and slow induction make it obsolete in modern practice.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q6</span><span class="q-text">Local anaesthesia</span><span class="q-year">S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Blocks transmission of nerve impulses by altering membrane permeability — LA works by blocking voltage-gated sodium channels, preventing Na⁺ influx, thus preventing action potential generation/propagation. Option b is WRONG (LA affects ALL nerve fibres, motor &gt; sensory in higher doses). Option c is partially true but not complete. Option d is WRONG (LA does NOT work well in infected abscesses due to acidic pH).</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q7</span><span class="q-text">Which of the following causes dissociative anaesthesia?</span><span class="q-year">W-11</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Ketamine — Ketamine produces "dissociative anaesthesia" — a trance-like state with analgesia, amnesia, but preserved airway reflexes and spontaneous breathing. Mechanism: NMDA receptor antagonist. Used in haemodynamically unstable patients, trauma, paediatric procedures. Side effects: hallucinations (prevented by benzodiazepines), increased secretions, raised ICP.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q8</span><span class="q-text">Which parameter monitoring is important for anaesthetist during major surgery?</span><span class="q-year">W-11, W-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">All of the above — ASA minimum monitoring standards during anaesthesia: (1) Urine output (organ perfusion), (2) Pulse/HR (cardiac status), (3) Oxygen saturation/SpO₂ (respiratory adequacy), plus BP, EtCO₂, temperature, ECG. All are important, so "all of the above" is correct.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q9</span><span class="q-text">Boyle's apparatus is for</span><span class="q-year">S-13</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">General anaesthesia — Boyle's apparatus (anaesthetic machine) = the standard equipment for delivery of GENERAL ANAESTHESIA. It controls flow of O₂, N₂O, and volatile anaesthetic agents (sevoflurane, isoflurane). Named after Sir Henry Boyle who designed the first practical anaesthetic machine in 1917.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Epidural anaesthesia (M-04,10)(W-11,14,21)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Complications of spinal anaesthesia (M-06,09)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Spinal anaesthesia (N-08,10)(S-12,13,17)(W-14,15,17,19)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Local / Regional anaesthesia (N-09)(M-11)(S-15,19)(W-16,18)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Ketamine / Xylocaine / Laryngeal mask airway / General anaesthesia</span></div>
+    <div class="saq-item"><span class="saq-num">6</span><span>Succinyl Choline (A-2000) / Pancuronium (O-99) / Endotracheal tube (A-87)</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 19 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch19">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 19</span>
+    <span class="chapter-title">Perioperative Management of the High-Risk Surgical Patient</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Swan-Ganz catheter measures</span><span class="q-year">N-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">Pulmonary capillary resistance (Pulmonary capillary wedge pressure — PCWP) — The Swan-Ganz (pulmonary artery) catheter measures: PCWP (reflects left atrial pressure / LVEDP), pulmonary artery pressure, cardiac output (thermodilution), and mixed venous O₂ saturation. PCWP is used to assess left heart function and differentiate cardiac causes of pulmonary oedema.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 20 -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="chapter" id="ch20">
+  <div class="chapter-header">
+    <span class="chapter-num">CH 20</span>
+    <span class="chapter-title">Nutrition and Fluid Therapy</span>
+  </div>
+  <div class="section-label">MCQ — Multiple Choice Questions</div>
+  <div class="mcq-list">
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q1</span><span class="q-text">Main cation of extracellular compartment is</span><span class="q-year">N-03</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Sodium (Na⁺) — Na⁺ is the predominant EXTRACELLULAR cation (135–145 mEq/L). It determines ECF osmolality and volume. Potassium (K⁺) is the main INTRACELLULAR cation (150 mEq/L inside cells). Chloride is the main extracellular anion. Memory: Na = Outside, K = Inside cells.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q2</span><span class="q-text">Parenteral nutrition is best given by</span><span class="q-year">M-04</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ c</span><span class="ans-text">Subclavian vein — TPN (Total Parenteral Nutrition) must be administered via a CENTRAL vein (subclavian or internal jugular → superior vena cava) because hypertonic solutions (high osmolality ~2000 mOsm/L) would cause thrombophlebitis in peripheral veins. Subclavian is the preferred site due to lower infection risk than femoral and easier access than jugular.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q3</span><span class="q-text">Contraindications for enteral feeding are</span><span class="q-year">N-08</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ d</span><span class="ans-text">None of the above — Dysphagia for solids, inflammatory bowel disease, and distal low-output enterocutaneous fistulas are NOT contraindications to enteral feeding. True contraindications to enteral feeding: complete intestinal obstruction, paralytic ileus, high-output proximal fistula, severe haemodynamic instability. Enteral nutrition is always preferred over parenteral when the gut is functional ("If the gut works, use it").</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q4</span><span class="q-text">Best vein for administering Total Parenteral Nutrition is</span><span class="q-year">N-09</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ a</span><span class="ans-text">Subclavian vein — Consistent with Q2. TPN → central venous access → subclavian or internal jugular → tip in SVC. PICC lines (peripherally inserted central catheters) via basilic/cephalic vein are also used for long-term TPN.</span></div>
+    </div>
+
+    <div class="mcq-item">
+      <div class="q-row"><span class="q-num">Q5</span><span class="q-text">Insensible daily water loss is</span><span class="q-year">M-10, S-12</span></div>
+      <div class="answer-row"><span class="ans-badge">✓ b</span><span class="ans-text">800–1,000 mL — Daily insensible water loss in adults: Skin (sweat/evaporation) ≈ 500 mL, Respiratory tract (expired air) ≈ 300–400 mL. Total ≈ 800–1,000 mL/day. Total daily fluid requirement: insensible loss (800–1000 mL) + urine (1500 mL) + faecal (100–200 mL) = ~2500 mL/day.</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label">SAQ Topics (Ch. 16 — Preoperative Preparation)</div>
+  <div class="saq-section">
+    <div class="saq-item"><span class="saq-num">1</span><span>Antibiotic prophylaxis (W-11)</span></div>
+    <div class="saq-item"><span class="saq-num">2</span><span>Metabolic alkalosis (M-10) / Ryle's tube (A-95)</span></div>
+    <div class="saq-item"><span class="saq-num">3</span><span>Pre-operative evaluation before major surgery (A-92)</span></div>
+    <div class="saq-item"><span class="saq-num">4</span><span>Bowel preparation prior to colonic surgery (A-86)</span></div>
+    <div class="saq-item"><span class="saq-num">5</span><span>Solutions used for pre-operative skin preparation (O-89)</span></div>
+  </div>
+</div>
+
+<div class="footer-note">
+  <strong>📋 Summary — Both PDFs Combined</strong><br><br>
+  <strong>PDF 1:</strong> Ch. 1–6 (Metabolic response, Shock, Wounds, Surgical skills, Infection, Surgery in tropics) — 57 MCQs answered<br>
+  <strong>PDF 2:</strong> Ch. 6 contd., 7–9, 12–13, 15, 17, 19–20 — 46 MCQs answered<br><br>
+  <strong>Total MCQs answered across both files: ~103</strong><br><br>
+  <span style="color: #f77f00;">⚠️ For any SAQ or LAQ topic listed, ask me by topic name and I'll write a complete structured model answer.</span>
+</div>
+
+
+<div class="navigation-bar" style="display: flex; justify-content: space-between; max-width: 900px; margin: 2rem auto; padding: 1.5rem; border-top: 2px solid #e5e7eb; font-family: 'Inter', system-ui, sans-serif;">
+  <a href="MBBS_Surgery_MCQ_Answers_Part1.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">⬅️ Previous Part</a>
+  <a href="index.html" style="padding: 0.75rem 1.5rem; background-color: #f3f4f6; color: #111827; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s;">🏠 Home List</a>
+  <a href="MBBS_Surgery_MCQ_Answers_Part3.html" style="padding: 0.75rem 1.5rem; background-color: #4F46E5; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4); transition: transform 0.2s;">Next Part ➡️</a>
+</div>
+
+</body>
+</html>
